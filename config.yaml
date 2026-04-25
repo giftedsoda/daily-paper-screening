@@ -1,0 +1,37 @@
+project_name: "Awesome-XXX-Papers"
+description: "A curated list of papers related to XXX"
+author: "Your Name"
+
+# arxiv search keywords (combined with OR)
+keywords:
+  - "agent"
+  - "neuro-symbolic"
+
+# Facet dimensions shown in the sidebar
+facets:
+  - key: "category"
+    label: "Category"
+    values: ["Method", "Benchmark", "Survey"]
+  - key: "task"
+    label: "Task"
+    values: ["Classification", "Generation", "Detection"]
+  - key: "modality"
+    label: "Modality"
+    values: ["Text", "Image", "Video", "Audio", "Multimodal"]
+
+# Rule-based auto-tagging: keyword in title/abstract -> tag value
+auto_tags:
+  category:
+    "Survey": ["survey", "review", "overview", "comprehensive study"]
+    "Benchmark": ["benchmark", "dataset", "evaluation", "leaderboard"]
+    "Method": []  # default fallback
+
+# LLM auto-tagging (uses DeepSeek API, compatible with OpenAI SDK)
+llm:
+  enabled: true
+  api_key_env: "DEEPSEEK_API_KEY"   # read API key from this env var
+  base_url: "https://api.deepseek.com"
+  model: "deepseek-v4-flash"
+
+max_results_per_fetch: 100
+days_lookback: 7

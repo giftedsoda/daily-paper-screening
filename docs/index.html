@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Awesome Papers</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">
+    <h1>Awesome Papers</h1>
+    <span class="tag-line">
+      Curated paper collection
+      &middot; <span id="result-count">Loading&hellip;</span>
+    </span>
+  </div>
+  <div class="topbar-right">
+    <input type="search" id="search" placeholder="Search papers&hellip;" autocomplete="off">
+    <select id="sort">
+      <option value="date-desc">Newest first</option>
+      <option value="date-asc">Oldest first</option>
+      <option value="title">Title A&rarr;Z</option>
+      <option value="venue">Venue</option>
+    </select>
+    <a id="gh-link" class="gh" href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
+  </div>
+</header>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-head">
+      <strong>Filters</strong>
+      <button id="clear-filters">Clear</button>
+    </div>
+
+    <!-- facet groups are built dynamically by app.js -->
+
+    <div class="filter-group" data-facet="year">
+      <h3>Year</h3>
+      <div class="facet-options"></div>
+    </div>
+
+    <div class="filter-group" data-facet="extras">
+      <h3>Extras</h3>
+      <div class="facet-options">
+        <label class="chk">
+          <input type="checkbox" data-extra="has_code">
+          Has code
+        </label>
+        <label class="chk">
+          <input type="checkbox" data-extra="has_venue">
+          Has venue
+        </label>
+      </div>
+    </div>
+
+    <div class="sidebar-footer">
+      Built from <code>data/papers.json</code>.<br>
+      Tags auto-generated from arxiv metadata.
+    </div>
+  </aside>
+
+  <main class="main">
+    <div class="results-bar">
+      <div id="active-tags" class="active-tags"></div>
+    </div>
+
+    <div id="results" class="cards">
+      <p class="loading">Loading&hellip;</p>
+    </div>
+
+    <p id="empty" class="empty" hidden>No papers match the current filters.</p>
+  </main>
+</div>
+
+<footer class="footer">
+  <span>Open-source &middot; contributions welcome</span>
+  <span>Auto-updated daily via GitHub Actions</span>
+</footer>
+
+<!-- Settings button (bottom-left gear icon) -->
+<button id="settings-btn" class="settings-btn" title="Settings">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="3"/>
+    <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+  </svg>
+</button>
+
+<!-- Settings overlay + panel -->
+<div id="settings-overlay" class="settings-overlay" hidden></div>
+<div id="settings-panel" class="settings-panel" hidden>
+  <div class="sp-header">
+    <h2>Settings</h2>
+    <button id="settings-close" class="sp-close" title="Close">&times;</button>
+  </div>
+
+  <div class="sp-body">
+    <section class="sp-section">
+      <h3>Search Keywords</h3>
+      <p class="sp-hint">Keywords for arxiv search &amp; frontend filter. Press Enter to add.</p>
+      <div id="kw-tags" class="kw-tags"></div>
+      <input type="text" id="kw-input" class="kw-input" placeholder="Add keyword&hellip;">
+    </section>
+
+    <section class="sp-section">
+      <h3>Classification Dimensions</h3>
+      <p class="sp-hint">Define LLM tagging dimensions and candidate values. Add/remove values per dimension.</p>
+      <div id="facet-editor" class="facet-editor"></div>
+      <button id="add-facet-btn" class="sp-btn sp-btn-secondary add-facet-btn">+ Add dimension</button>
+    </section>
+  </div>
+
+  <div class="sp-footer">
+    <button id="sp-copy-config" class="sp-btn sp-btn-secondary" title="Copy config.yaml snippet">Copy config</button>
+    <div class="sp-footer-right">
+      <button id="sp-reset" class="sp-btn sp-btn-secondary">Reset</button>
+      <button id="sp-apply" class="sp-btn sp-btn-primary">Apply</button>
+    </div>
+  </div>
+</div>
+
+<script src="assets/app.js"></script>
+</body>
+</html>
