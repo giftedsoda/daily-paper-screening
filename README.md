@@ -95,6 +95,23 @@ python -m http.server 8000
 
 GitHub Actions 会每天自动运行 `fetch_papers.py` 抓取新论文并更新网页。
 
+## LLM 自动打标
+
+本项目使用 DeepSeek API 对论文进行自动分类打标。
+
+1. 复制环境变量模板并填入 API Key：
+```bash
+cp .env.example .env
+# 编辑 .env，填入 DEEPSEEK_API_KEY
+```
+
+2. 对已有论文重新打标：
+```bash
+python scripts/manage.py retag
+```
+
+GitHub Actions 中通过 Repository Secrets 注入 API Key，无需在代码中暴露。
+
 ## 项目结构
 
 ```
@@ -102,7 +119,8 @@ get-papers/
 ├── config.yaml                # 主题配置
 ├── scripts/
 │   ├── fetch_papers.py        # arxiv 自动抓取
-│   └── manage.py              # 论文管理 CLI
+│   ├── manage.py              # 论文管理 CLI
+│   └── llm_tagger.py          # DeepSeek LLM 自动打标
 ├── docs/                      # GitHub Pages 目录
 │   ├── index.html             # 单页应用
 │   ├── assets/
@@ -124,6 +142,10 @@ get-papers/
 - **暗色模式**：自动跟随系统设置
 - **响应式**：移动端友好
 
-## 许可证
+## Acknowledgement
+
+This project is inspired by [Awesome-Agent-Memory-Papers](https://github.com/yyyujintang/Awesome-Agent-Memory-Papers) by [Yujin Tang](https://yyyujintang.github.io/). The frontend display style and overall project structure are referenced from their work.
+
+## License
 
 MIT
