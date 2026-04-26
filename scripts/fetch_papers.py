@@ -1,16 +1,17 @@
 #!/usr/bin/env python3
-"""Fetch new papers from arxiv based on config.yaml keywords and append to papers.json."""
+"""Fetch papers by arxiv category, filter & tag with LLM, append to papers.json."""
 
 import json
 import re
 import sys
-from datetime import datetime, timedelta
+from collections import Counter
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 import arxiv
 import yaml
 
-from llm_tagger import llm_tag, merge_tags
+from llm_tagger import llm_classify_batch
 
 ROOT = Path(__file__).resolve().parent.parent
 CONFIG_PATH = ROOT / "config.yaml"
@@ -47,122 +48,125 @@ def extract_github_url(text: str) -> str:
     m = re.search(r"https?://github\.com/[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+", text or "")
     if not m:
         return ""
-    url = m.group(0).rstrip(".")
-    return url
+    return m.group(0).rstrip(".")
 
 
-def auto_tag(title: str, abstract: str, config: dict) -> dict:
-    """Apply rule-based tagging from config.auto_tags."""
-    tags = {}
-    auto_rules = config.get("auto_tags", {})
-    combined = f"{title} {abstract}".lower()
-
-    for facet_key, value_keywords in auto_rules.items():
-        matched = None
-        default = None
-        for value, keywords in value_keywords.items():
-            if not keywords:
-                default = value
-                continue
-            for kw in keywords:
-                if kw.lower() in combined:
-                    matched = value
-                    break
-            if matched:
-                break
-        tags[facet_key] = matched or default or ""
-
-    # Populate any facet keys from config that aren't covered by auto_tags
-    for facet in config.get("facets", []):
-        if facet["key"] not in tags:
-            tags[facet["key"]] = ""
-
-    return tags
-
-
-def build_query(config: dict) -> str:
-    keywords = config.get("keywords", [])
-    if not keywords:
-        print("Error: no keywords defined in config.yaml", file=sys.stderr)
+def fetch_by_categories(config: dict) -> list[dict]:
+    """Fetch recent papers from arxiv by category, deduplicated by arxiv ID."""
+    categories = config.get("arxiv_categories", [])
+    if not categories:
+        print("Error: no arxiv_categories in config.yaml", file=sys.stderr)
         sys.exit(1)
-    parts = [f'all:"{kw}"' for kw in keywords]
-    return " OR ".join(parts)
 
-
-def fetch(config: dict) -> list[dict]:
-    """Search arxiv and return list of new paper dicts."""
-    query = build_query(config)
-    max_results = config.get("max_results_per_fetch", 100)
+    max_per_cat = config.get("max_results_per_category", 200)
+    days = config.get("days_lookback", 2)
+    cutoff = datetime.now(timezone.utc) - timedelta(days=days)
 
     client = arxiv.Client()
-    search = arxiv.Search(
-        query=query,
-        max_results=max_results,
-        sort_by=arxiv.SortCriterion.SubmittedDate,
-        sort_order=arxiv.SortOrder.Descending,
-    )
+    seen_ids: dict[str, dict] = {}
 
-    existing_ids = {p["id"] for p in load_papers()}
-    new_papers = []
-
-    for result in client.results(search):
-        paper_id = slugify(result.title)
-        arxiv_id = result.entry_id.split("/")[-1]
-
-        if paper_id in existing_ids or arxiv_id in existing_ids:
-            continue
-
-        comment = result.comment or ""
-        abstract = result.summary or ""
-        code_url = extract_github_url(abstract) or extract_github_url(comment)
-
-        venue = ""
-        # Try to extract venue from comments like "Accepted at NeurIPS 2024"
-        venue_match = re.search(
-            r"(?:accepted|published|appear)\s+(?:at|in|by)\s+([A-Z][A-Za-z0-9\s&-]+\d{2,4})",
-            comment,
-            re.IGNORECASE,
+    for cat in categories:
+        search = arxiv.Search(
+            query=f"cat:{cat}",
+            max_results=max_per_cat,
+            sort_by=arxiv.SortCriterion.SubmittedDate,
+            sort_order=arxiv.SortOrder.Descending,
         )
-        if venue_match:
-            venue = venue_match.group(1).strip()
+        cat_count = 0
+        for result in client.results(search):
+            pub = result.published if result.published.tzinfo else result.published.replace(tzinfo=timezone.utc)
+            if pub < cutoff:
+                break
+            arxiv_id = result.entry_id.split("/")[-1].split("v")[0]
+            if arxiv_id in seen_ids:
+                continue
 
-        tags = auto_tag(result.title, abstract, config)
-        llm_tags = llm_tag(result.title, abstract, config)
-        tags = merge_tags(tags, llm_tags)
+            comment = result.comment or ""
+            abstract = result.summary or ""
+            code_url = extract_github_url(abstract) or extract_github_url(comment)
 
-        paper = {
-            "id": paper_id,
-            "title": result.title.strip(),
-            "abstract": abstract.strip(),
-            "venue": venue,
-            "year": result.published.year,
-            "date": result.published.strftime("%Y-%m-%d"),
-            "link": f"https://arxiv.org/abs/{arxiv_id}",
-            "code": code_url,
-            "notes": "",
-            "authors": ", ".join(a.name for a in result.authors[:5])
-                       + (" et al." if len(result.authors) > 5 else ""),
-            "tags": tags,
-        }
-        new_papers.append(paper)
-        existing_ids.add(paper_id)
+            venue = ""
+            venue_match = re.search(
+                r"(?:accepted|published|appear)\s+(?:at|in|by)\s+([A-Z][A-Za-z0-9\s&-]+\d{2,4})",
+                comment,
+                re.IGNORECASE,
+            )
+            if venue_match:
+                venue = venue_match.group(1).strip()
 
-    return new_papers
+            paper = {
+                "id": slugify(result.title),
+                "arxiv_id": arxiv_id,
+                "title": result.title.strip(),
+                "abstract": abstract.strip(),
+                "venue": venue,
+                "year": result.published.year,
+                "date": result.published.strftime("%Y-%m-%d"),
+                "link": f"https://arxiv.org/abs/{arxiv_id}",
+                "code": code_url,
+                "notes": "",
+                "authors": ", ".join(a.name for a in result.authors[:5])
+                           + (" et al." if len(result.authors) > 5 else ""),
+                "tags": {},
+            }
+            seen_ids[arxiv_id] = paper
+            cat_count += 1
+
+        print(f"  {cat}: {cat_count} papers")
+
+    return list(seen_ids.values())
 
 
 def main():
     config = load_config()
-    print(f"Searching arxiv with keywords: {config.get('keywords', [])}")
+    facets = config.get("facets", [])
+    categories = config.get("arxiv_categories", [])
+    print(f"Fetching from arxiv categories: {categories}")
 
-    new_papers = fetch(config)
-    if not new_papers:
-        print("No new papers found.")
+    raw = fetch_by_categories(config)
+    print(f"Fetched {len(raw)} unique papers")
+
+    existing = load_papers()
+    existing_ids = set()
+    for p in existing:
+        existing_ids.add(p["id"])
+        if "arxiv_id" in p:
+            existing_ids.add(p["arxiv_id"])
+        link = p.get("link", "")
+        if "/abs/" in link:
+            existing_ids.add(link.split("/abs/")[-1].split("v")[0])
+
+    candidates = [p for p in raw
+                  if p["id"] not in existing_ids and p["arxiv_id"] not in existing_ids]
+    print(f"Candidates after dedup: {len(candidates)}")
+
+    if not candidates:
+        print("No new candidate papers to classify.")
         return
 
-    papers = load_papers()
-    papers.extend(new_papers)
-    save_papers(papers)
-    print(f"Added {len(new_papers)} new papers. Total: {len(papers)}")
+    print("Running LLM classification...")
+    results = llm_classify_batch(candidates, facets, config)
+
+    new_papers = []
+    topic_counter: Counter = Counter()
+    for paper, tags in zip(candidates, results):
+        if tags is not None:
+            paper["tags"] = tags
+            topic_counter[tags.get("topic", "?")] += 1
+            new_papers.append(paper)
+
+    discarded = len(candidates) - len(new_papers)
+    print(f"Results: {len(new_papers)} relevant, {discarded} discarded")
+    for topic, count in topic_counter.most_common():
+        print(f"  - {topic}: {count}")
+
+    if not new_papers:
+        print("No relevant papers found after LLM filtering.")
+        return
+
+    existing.extend(new_papers)
+    save_papers(existing)
+    print(f"Added {len(new_papers)} new papers. Total: {len(existing)}")
 
 
 if __name__ == "__main__":

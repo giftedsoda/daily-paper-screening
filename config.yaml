@@ -1,37 +1,51 @@
-project_name: "Awesome-XXX-Papers"
-description: "A curated list of papers related to XXX"
+project_name: "Awesome-AI-Reasoning-Papers"
+description: "A curated list of papers on LLM/MLLM reasoning, agents, and AI for science"
 author: "Your Name"
 
-# arxiv search keywords (combined with OR)
-keywords:
-  - "agent"
-  - "neuro-symbolic"
+# arxiv 分类抓取（替代关键词搜索）
+arxiv_categories:
+  - "cs.AI"
+  - "cs.CL"
+  - "cs.CV"
+  - "cs.LG"
+  - "cs.MA"
+  - "cs.RO"
 
-# Facet dimensions shown in the sidebar
+# 前端侧边栏关键词过滤（不再用于 arxiv 搜索）
+keywords:
+  - "LLM reasoning"
+  - "chain-of-thought"
+  - "multimodal reasoning"
+  - "LLM agent"
+  - "embodied agent"
+  - "mathematical reasoning"
+  - "theorem proving"
+  - "AI for science"
+
+# Facet dimensions — topic.values 同时作为过滤条件：不属于任何 topic 的论文丢弃
 facets:
+  - key: "topic"
+    label: "Topic"
+    values:
+      - "LLM Reasoning & Planning"
+      - "MLLM Reasoning & Planning"
+      - "Agent in Digital World"
+      - "Agent in Physical World"
+      - "AI for Math"
+      - "AI for Science"
   - key: "category"
     label: "Category"
     values: ["Method", "Benchmark", "Survey"]
-  - key: "task"
-    label: "Task"
-    values: ["Classification", "Generation", "Detection"]
   - key: "modality"
     label: "Modality"
     values: ["Text", "Image", "Video", "Audio", "Multimodal"]
 
-# Rule-based auto-tagging: keyword in title/abstract -> tag value
-auto_tags:
-  category:
-    "Survey": ["survey", "review", "overview", "comprehensive study"]
-    "Benchmark": ["benchmark", "dataset", "evaluation", "leaderboard"]
-    "Method": []  # default fallback
-
 # LLM auto-tagging (uses DeepSeek API, compatible with OpenAI SDK)
 llm:
   enabled: true
-  api_key_env: "DEEPSEEK_API_KEY"   # read API key from this env var
+  api_key_env: "DEEPSEEK_API_KEY"
   base_url: "https://api.deepseek.com"
   model: "deepseek-v4-flash"
 
-max_results_per_fetch: 100
-days_lookback: 7
+max_results_per_category: 200
+days_lookback: 3

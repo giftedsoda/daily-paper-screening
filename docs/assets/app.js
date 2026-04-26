@@ -521,11 +521,23 @@ function loadSettingsFromURL() {
   }
 }
 
-const DEFAULT_KEYWORDS = ["agent", "neuro-symbolic"];
+const DEFAULT_KEYWORDS = [
+  "LLM reasoning", "large language model reasoning", "chain-of-thought",
+  "LLM planning", "language model planning",
+  "multimodal reasoning", "visual reasoning", "multimodal chain-of-thought",
+  "LLM agent", "language model agent", "AI agent",
+  "web agent", "GUI agent", "embodied agent", "tool-use agent",
+  "AI for math", "mathematical reasoning", "theorem proving",
+  "AI for science", "scientific discovery",
+];
 
 const DEFAULT_FACETS = [
   { key: "category", label: "Category", values: ["Method", "Benchmark", "Survey"] },
-  { key: "task", label: "Task", values: ["Classification", "Generation", "Detection"] },
+  { key: "topic", label: "Topic", values: [
+    "LLM Reasoning & Planning", "MLLM Reasoning & Planning",
+    "Agent in Digital World", "Agent in Physical World",
+    "AI for Math", "AI for Science",
+  ]},
   { key: "modality", label: "Modality", values: ["Text", "Image", "Video", "Audio", "Multimodal"] },
 ];
 
