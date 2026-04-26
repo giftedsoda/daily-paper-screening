@@ -36,5 +36,4 @@ llm:
   base_url: "https://api.deepseek.com"
   model: "deepseek-v4-flash"
 
-max_results_per_category: 200
 days_lookback: 3

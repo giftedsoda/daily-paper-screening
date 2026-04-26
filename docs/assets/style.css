@@ -289,6 +289,8 @@ code {
   border-radius: 8px;
   padding: 14px 15px 12px 15px;
   box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
   transition: box-shadow 0.12s, border-color 0.12s;
   display: flex;
   flex-direction: column;
@@ -348,7 +350,8 @@ code {
   display: flex;
   gap: 8px;
   font-size: 12px;
-  margin-top: 4px;
+  margin-top: auto;
+  padding-top: 8px;
 }
 .card .actions a {
   padding: 3px 8px;

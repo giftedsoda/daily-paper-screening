@@ -58,8 +58,7 @@ def fetch_by_categories(config: dict) -> list[dict]:
         print("Error: no arxiv_categories in config.yaml", file=sys.stderr)
         sys.exit(1)
 
-    max_per_cat = config.get("max_results_per_category", 200)
-    days = config.get("days_lookback", 2)
+    days = config.get("days_lookback", 3)
     cutoff = datetime.now(timezone.utc) - timedelta(days=days)
 
     client = arxiv.Client()
@@ -68,7 +67,7 @@ def fetch_by_categories(config: dict) -> list[dict]:
     for cat in categories:
         search = arxiv.Search(
             query=f"cat:{cat}",
-            max_results=max_per_cat,
+            max_results=None,
             sort_by=arxiv.SortCriterion.SubmittedDate,
             sort_order=arxiv.SortOrder.Descending,
         )
