@@ -72,10 +72,11 @@ function buildSidebar() {
   // Remove any previously inserted dynamic facet groups
   sidebar.querySelectorAll(".filter-group[data-dynamic]").forEach((el) => el.remove());
 
-  // Insert dynamic facet groups before the year group
-  const settingKeys = new Set(state.settings.facets.map((f) => f.key));
-  for (const key of state.facetKeys) {
-    if (settingKeys.size && !settingKeys.has(key)) continue;
+  // Insert dynamic facet groups before the year group, in settings order
+  const orderedKeys = state.settings.facets.length
+    ? state.settings.facets.map((f) => f.key).filter((k) => state.facetKeys.includes(k))
+    : state.facetKeys;
+  for (const key of orderedKeys) {
     const group = document.createElement("div");
     group.className = "filter-group";
     group.dataset.facet = key;
@@ -463,12 +464,12 @@ function loadSettingsFromURL() {
 }
 
 const DEFAULT_FACETS = [
-  { key: "category", label: "Category", values: ["Method", "Benchmark", "Survey"] },
   { key: "topic", label: "Topic", values: [
     "LLM Reasoning & Planning", "MLLM Reasoning & Planning",
     "Agent in Digital World", "Agent in Physical World",
     "AI for Math", "AI for Science",
   ]},
+  { key: "category", label: "Category", values: ["Method", "Benchmark", "Survey"] },
   { key: "modality", label: "Modality", values: ["Text", "Image", "Video", "Audio", "Multimodal"] },
 ];
 
