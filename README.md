@@ -208,7 +208,7 @@ get-papers/
 
 ## 网页功能
 
-- **多维度筛选**：Topic / Category / Modality / Keywords 侧边栏过滤
+- **多维度筛选**：Topic / Category / Modality 侧边栏过滤
 - **全文搜索**：实时搜索标题、摘要、作者，支持多词 AND 匹配
 - **排序**：按时间、标题、会议排序
 - **论文卡片**：标题、日期、会议、作者、彩色标签、Paper / Code 链接

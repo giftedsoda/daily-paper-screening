@@ -11,17 +11,6 @@ arxiv_categories:
   - "cs.MA"
   - "cs.RO"
 
-# 前端侧边栏关键词过滤（不再用于 arxiv 搜索）
-keywords:
-  - "LLM reasoning"
-  - "chain-of-thought"
-  - "multimodal reasoning"
-  - "LLM agent"
-  - "embodied agent"
-  - "mathematical reasoning"
-  - "theorem proving"
-  - "AI for science"
-
 # Facet dimensions — topic.values 同时作为过滤条件：不属于任何 topic 的论文丢弃
 facets:
   - key: "topic"

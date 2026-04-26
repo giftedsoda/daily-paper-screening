@@ -5,13 +5,11 @@ const state = {
   facetKeys: [],       // discovered from data, e.g. ["category", "task", "modality"]
   active: {},          // facetKey -> Set of selected values
   yearActive: new Set(),
-  keywordActive: new Set(),
   has_code: false,
   has_venue: false,
   query: "",
   sort: "date-desc",
   settings: {
-    keywords: [],
     facets: [],
   },
 };
@@ -73,38 +71,6 @@ function buildSidebar() {
 
   // Remove any previously inserted dynamic facet groups
   sidebar.querySelectorAll(".filter-group[data-dynamic]").forEach((el) => el.remove());
-
-  // Keywords filter group (at the top, before tag facets)
-  if (state.settings.keywords.length) {
-    const kwGroup = document.createElement("div");
-    kwGroup.className = "filter-group";
-    kwGroup.dataset.facet = "_keyword";
-    kwGroup.dataset.dynamic = "true";
-    kwGroup.innerHTML = `<h3>Keywords</h3><div class="facet-options"></div>`;
-    sidebar.insertBefore(kwGroup, yearGroup);
-
-    const kwContainer = kwGroup.querySelector(".facet-options");
-    for (const kw of state.settings.keywords) {
-      const kwLower = kw.toLowerCase();
-      const count = state.papers.filter((p) => {
-        const hay = [p.title, p.abstract || "", p.venue, p.authors, p.notes].join(" ").toLowerCase();
-        return hay.includes(kwLower);
-      }).length;
-      const label = document.createElement("label");
-      label.className = "chk";
-      label.innerHTML = `
-        <input type="checkbox" data-facet="_keyword" data-value="${esc(kw)}">
-        ${esc(kw)}
-        <span class="count">${count}</span>
-      `;
-      kwContainer.appendChild(label);
-      label.querySelector("input").addEventListener("change", (e) => {
-        if (e.target.checked) state.keywordActive.add(kw);
-        else state.keywordActive.delete(kw);
-        render();
-      });
-    }
-  }
 
   // Insert dynamic facet groups before the year group
   const settingKeys = new Set(state.settings.facets.map((f) => f.key));
@@ -172,7 +138,6 @@ function bindSidebarControls() {
   document.getElementById("clear-filters").addEventListener("click", () => {
     for (const k of state.facetKeys) state.active[k].clear();
     state.yearActive.clear();
-    state.keywordActive.clear();
     state.has_code = false;
     state.has_venue = false;
     document
@@ -231,16 +196,6 @@ function bindTopbar() {
 
 // ---------- filtering / sorting ----------
 function matches(p) {
-  // Keyword filters (OR: match any selected keyword in title+abstract)
-  if (state.keywordActive.size) {
-    const hay = [p.title, p.abstract || "", p.venue, p.authors, p.notes].join(" ").toLowerCase();
-    let kwHit = false;
-    for (const kw of state.keywordActive) {
-      if (hay.includes(kw.toLowerCase())) { kwHit = true; break; }
-    }
-    if (!kwHit) return false;
-  }
-
   // Facet filters
   for (const k of state.facetKeys) {
     if (!state.active[k].size) continue;
@@ -407,7 +362,6 @@ function renderActiveTags() {
   for (const k of state.facetKeys) {
     for (const v of state.active[k]) chips.push([k, v]);
   }
-  for (const v of state.keywordActive) chips.push(["_keyword", v]);
   for (const v of state.yearActive) chips.push(["year", v]);
   if (state.has_code) chips.push(["extras", "has code"]);
   if (state.has_venue) chips.push(["extras", "has venue"]);
@@ -433,11 +387,6 @@ function removeActive(k, v) {
       const el = document.querySelector('[data-extra="has_venue"]');
       if (el) el.checked = false;
     }
-  } else if (k === "_keyword") {
-    state.keywordActive.delete(v);
-    const escVal = CSS.escape(String(v));
-    const box = document.querySelector(`input[data-facet="_keyword"][data-value="${escVal}"]`);
-    if (box) box.checked = false;
   } else if (k === "year") {
     state.yearActive.delete(v);
     const box = document.querySelector(`input[data-facet="year"][data-value="${v}"]`);
@@ -493,14 +442,6 @@ function esc(s) {
 function loadSettingsFromURL() {
   const params = new URLSearchParams(location.search);
 
-  const kw = params.get("keywords");
-  if (kw) {
-    state.settings.keywords = kw.split(",").map((s) => s.trim()).filter(Boolean);
-  }
-  if (!state.settings.keywords.length) {
-    state.settings.keywords = [...DEFAULT_KEYWORDS];
-  }
-
   // facets param: "category:Method,Benchmark,Survey|task:Classification,Generation|..."
   const fp = params.get("facets");
   if (fp) {
@@ -520,16 +461,6 @@ function loadSettingsFromURL() {
     buildDefaultFacetSettings();
   }
 }
-
-const DEFAULT_KEYWORDS = [
-  "LLM reasoning", "large language model reasoning", "chain-of-thought",
-  "LLM planning", "language model planning",
-  "multimodal reasoning", "visual reasoning", "multimodal chain-of-thought",
-  "LLM agent", "language model agent", "AI agent",
-  "web agent", "GUI agent", "embodied agent", "tool-use agent",
-  "AI for math", "mathematical reasoning", "theorem proving",
-  "AI for science", "scientific discovery",
-];
 
 const DEFAULT_FACETS = [
   { key: "category", label: "Category", values: ["Method", "Benchmark", "Survey"] },
@@ -556,9 +487,6 @@ function buildDefaultFacetSettings() {
 
 function settingsToURL() {
   const params = new URLSearchParams();
-  if (state.settings.keywords.length) {
-    params.set("keywords", state.settings.keywords.join(","));
-  }
   if (state.settings.facets.length) {
     const segs = state.settings.facets.map((f) =>
       `${f.key}~${f.label}:${f.values.join(",")}`
@@ -583,23 +511,6 @@ function bindSettings() {
   document.getElementById("sp-reset").addEventListener("click", resetSettings);
   document.getElementById("sp-copy-config").addEventListener("click", copyConfig);
 
-  // Keyword input: add on Enter (skip during IME composition)
-  const kwInput = document.getElementById("kw-input");
-  let composing = false;
-  kwInput.addEventListener("compositionstart", () => { composing = true; });
-  kwInput.addEventListener("compositionend", () => { composing = false; });
-  kwInput.addEventListener("keydown", (e) => {
-    if (e.key === "Enter" && !e.isComposing && !composing) {
-      e.preventDefault();
-      const val = kwInput.value.trim().replace(/\s+/g, " ");
-      if (val && !settingsTemp.keywords.includes(val)) {
-        settingsTemp.keywords.push(val);
-        renderKeywordTags();
-      }
-      kwInput.value = "";
-    }
-  });
-
   // Add dimension button
   document.getElementById("add-facet-btn").addEventListener("click", () => {
     const idx = settingsTemp.facets.length;
@@ -608,7 +519,7 @@ function bindSettings() {
   });
 }
 
-let settingsTemp = { keywords: [], facets: [] };
+let settingsTemp = { facets: [] };
 
 function cloneFacets(facets) {
   return facets.map((f) => ({ key: f.key, label: f.label, values: [...f.values] }));
@@ -616,47 +527,18 @@ function cloneFacets(facets) {
 
 function openSettings() {
   settingsTemp = {
-    keywords: [...state.settings.keywords],
     facets: cloneFacets(state.settings.facets),
   };
 
   document.getElementById("settings-overlay").hidden = false;
   document.getElementById("settings-panel").hidden = false;
 
-  renderKeywordTags();
   renderFacetEditor();
 }
 
 function closeSettings() {
   document.getElementById("settings-overlay").hidden = true;
   document.getElementById("settings-panel").hidden = true;
-}
-
-function renderKeywordTags() {
-  const container = document.getElementById("kw-tags");
-  container.innerHTML = "";
-  settingsTemp.keywords.forEach((kw, i) => {
-    const tag = document.createElement("span");
-    tag.className = "fe-val";
-    const ci = (i + 4) % 8;
-    tag.style.background = `var(--tag-${ci}-bg)`;
-    tag.style.color = `var(--tag-${ci}-fg)`;
-
-    const text = document.createElement("span");
-    text.textContent = kw;
-    tag.appendChild(text);
-
-    const btn = document.createElement("span");
-    btn.className = "fe-val-remove";
-    btn.textContent = "\u00d7";
-    btn.addEventListener("click", () => {
-      settingsTemp.keywords = settingsTemp.keywords.filter((k) => k !== kw);
-      renderKeywordTags();
-    });
-    tag.appendChild(btn);
-
-    container.appendChild(tag);
-  });
 }
 
 function renderFacetEditor() {
@@ -759,7 +641,6 @@ function renderFacetEditor() {
 }
 
 function applySettings() {
-  state.settings.keywords = [...settingsTemp.keywords];
   state.settings.facets = cloneFacets(settingsTemp.facets);
 
   settingsToURL();
@@ -769,26 +650,15 @@ function applySettings() {
 }
 
 function resetSettings() {
+  buildDefaultFacetSettings();
   settingsTemp = {
-    keywords: [],
     facets: cloneFacets(state.settings.facets),
   };
-  buildDefaultFacetSettings();
-  settingsTemp.facets = cloneFacets(state.settings.facets);
-  renderKeywordTags();
   renderFacetEditor();
 }
 
 function copyConfig() {
-  const lines = ["keywords:"];
-  if (settingsTemp.keywords.length) {
-    for (const kw of settingsTemp.keywords) lines.push(`  - "${kw}"`);
-  } else {
-    lines.push('  - "keyword1"');
-  }
-
-  lines.push("");
-  lines.push("facets:");
+  const lines = ["facets:"];
   for (const f of settingsTemp.facets) {
     lines.push(`  - key: "${f.key}"`);
     lines.push(`    label: "${f.label}"`);
