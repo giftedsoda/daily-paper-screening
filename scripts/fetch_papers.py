@@ -4,6 +4,7 @@
 import json
 import re
 import sys
+import time
 from collections import Counter
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
@@ -61,7 +62,7 @@ def fetch_by_categories(config: dict) -> list[dict]:
     days = config.get("days_lookback", 3)
     cutoff = datetime.now(timezone.utc) - timedelta(days=days)
 
-    client = arxiv.Client()
+    client = arxiv.Client(page_size=50, delay_seconds=10, num_retries=10)
     seen_ids: dict[str, dict] = {}
 
     for cat in categories:
@@ -72,44 +73,48 @@ def fetch_by_categories(config: dict) -> list[dict]:
             sort_order=arxiv.SortOrder.Descending,
         )
         cat_count = 0
-        for result in client.results(search):
-            pub = result.published if result.published.tzinfo else result.published.replace(tzinfo=timezone.utc)
-            if pub < cutoff:
-                break
-            arxiv_id = result.entry_id.split("/")[-1].split("v")[0]
-            if arxiv_id in seen_ids:
-                continue
+        try:
+            for result in client.results(search):
+                pub = result.published if result.published.tzinfo else result.published.replace(tzinfo=timezone.utc)
+                if pub < cutoff:
+                    break
+                arxiv_id = result.entry_id.split("/")[-1].split("v")[0]
+                if arxiv_id in seen_ids:
+                    continue
 
-            comment = result.comment or ""
-            abstract = result.summary or ""
-            code_url = extract_github_url(abstract) or extract_github_url(comment)
+                comment = result.comment or ""
+                abstract = result.summary or ""
+                code_url = extract_github_url(abstract) or extract_github_url(comment)
 
-            venue = ""
-            venue_match = re.search(
-                r"(?:accepted|published|appear)\s+(?:at|in|by)\s+([A-Z][A-Za-z0-9\s&-]+\d{2,4})",
-                comment,
-                re.IGNORECASE,
-            )
-            if venue_match:
-                venue = venue_match.group(1).strip()
+                venue = ""
+                venue_match = re.search(
+                    r"(?:accepted|published|appear)\s+(?:at|in|by)\s+([A-Z][A-Za-z0-9\s&-]+\d{2,4})",
+                    comment,
+                    re.IGNORECASE,
+                )
+                if venue_match:
+                    venue = venue_match.group(1).strip()
 
-            paper = {
-                "id": slugify(result.title),
-                "arxiv_id": arxiv_id,
-                "title": result.title.strip(),
-                "abstract": abstract.strip(),
-                "venue": venue,
-                "year": result.published.year,
-                "date": result.published.strftime("%Y-%m-%d"),
-                "link": f"https://arxiv.org/abs/{arxiv_id}",
-                "code": code_url,
-                "notes": "",
-                "authors": ", ".join(a.name for a in result.authors[:5])
-                           + (" et al." if len(result.authors) > 5 else ""),
-                "tags": {},
-            }
-            seen_ids[arxiv_id] = paper
-            cat_count += 1
+                paper = {
+                    "id": slugify(result.title),
+                    "arxiv_id": arxiv_id,
+                    "title": result.title.strip(),
+                    "abstract": abstract.strip(),
+                    "venue": venue,
+                    "year": result.published.year,
+                    "date": result.published.strftime("%Y-%m-%d"),
+                    "link": f"https://arxiv.org/abs/{arxiv_id}",
+                    "code": code_url,
+                    "notes": "",
+                    "authors": ", ".join(a.name for a in result.authors[:5])
+                               + (" et al." if len(result.authors) > 5 else ""),
+                    "tags": {},
+                }
+                seen_ids[arxiv_id] = paper
+                cat_count += 1
+        except Exception as e:
+            print(f"  {cat}: stopped at {cat_count} papers (error: {e})", file=sys.stderr)
+            time.sleep(30)
 
         print(f"  {cat}: {cat_count} papers")
 
