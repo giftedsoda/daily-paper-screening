@@ -36,4 +36,4 @@ llm:
   base_url: "https://api.deepseek.com"
   model: "deepseek-v4-flash"
 
-days_lookback: 10
+days_lookback: 3
