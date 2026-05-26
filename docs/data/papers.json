@@ -71718,6 +71718,240 @@
         "category": "Method",
         "modality": "Multimodal"
       }
+    },
+    {
+      "id": "step-tp-a-grounded-step-level-dataset-with-chain-of-thought-reasoning-for-llm-gu",
+      "arxiv_id": "2605.25954",
+      "title": "Step-TP: A Grounded, Step-Level Dataset with Chain-of-Thought Reasoning for LLM-Guided Tensor Program Optimization",
+      "abstract": "Despite the strong reasoning capabilities of large language models (LLMs), optimizing the execution efficiency of tensor programs remains challenging due to the need for precise, composable transformation decisions. Recent LLM-guided approaches frame tensor program optimization as an iterative decision process, but existing datasets provide only end-to-end optimized program pairs using token-inefficient representations, lacking verifiable step-level supervision and interpretability. As a result, LLMs struggle to make reliable single-step decisions in large combinatorial optimization spaces. We introduce Step-TP, a post-training dataset for tensor program optimization that provides grounded, atomic, step-level supervision with structured chain-of-thought (CoT) reasoning. Step-TP forms a closed reasoning loop over intermediate program states, enabling reliable multi-step optimization rather than outcome imitation. Its design is guided by four principles: (i) a token-efficient, verifiable intermediate representation (IR) that deterministically lowers to TVM TIR; (ii) atomic and composable optimization strategies that decompose complex trajectories into interpretable single-step decisions; (iii) structured CoT supervision coupled with explicit IR-to-IR state transitions; and (iv) strategy filtering to balance coverage while preventing shortcut exploitation. The dataset and implementation are available at a GitHub link, https://github.com/LIUMENGFAN-gif/StepTP.",
+      "venue": "",
+      "year": 2026,
+      "date": "2026-05-25",
+      "link": "https://arxiv.org/abs/2605.25954",
+      "code": "https://github.com/LIUMENGFAN-gif/StepTP",
+      "notes": "",
+      "authors": "Mengfan Liu, Da Zheng, Junwei Su, Chuan Wu",
+      "tags": {
+        "topic": "LLM Reasoning & Planning",
+        "category": "Benchmark",
+        "modality": "Text"
+      }
+    },
+    {
+      "id": "small-models-strong-priors-architectural-inductive-bias-for-parameter-efficient-",
+      "arxiv_id": "2605.25949",
+      "title": "Small Models, Strong Priors: Architectural Inductive Bias for Parameter-Efficient Neural PDE Solvers",
+      "abstract": "Neural PDE solvers have followed the scaling trajectory of vision and language, with recent foundation models reaching billions of parameters. We argue that scale is a poor substitute for architectural inductive bias in this domain: structured priors deliver outsized parameter efficiency, and the pattern of where they succeed and fail is itself informative about what they capture. We instantiate this argument in WaveLiT, an architecture combining a discrete wavelet transform for lossless multi-resolution tokenization, an augmented linear attention block, a shared-weight multiscale feature pyramid, and a wavelet-domain auxiliary loss. Bespoke 1-10M-parameter WaveLiT models compete with foundation models of 100-1000$\\times$ their size across eight TheWell benchmarks, with the largest gains on wave and acoustic-dominated benchmarks where the wavelet-multiscale prior fits the dominant dynamical structure and small per-step errors do not compound geometrically under rollout. Trained jointly across all eight benchmarks, a 10M-parameter foundation variant exhibits a structured, physically interpretable transfer pattern -- strongest where the wavelet-multiscale prior matches the dynamics, weakest on chaotic advection-dominated flows. The entire pipeline trains on a single GPU. The results suggest that small-model PDE performance is shaped by architectural inductive bias rather than scale, and that the structure of a prior's failures is a useful empirical signal about its content.",
+      "venue": "",
+      "year": 2026,
+      "date": "2026-05-25",
+      "link": "https://arxiv.org/abs/2605.25949",
+      "code": "",
+      "notes": "",
+      "authors": "Shyam Sankaran, Hanwen Wang, Paris Perdikaris",
+      "tags": {
+        "topic": "AI for Science",
+        "category": "Method",
+        "modality": "Text"
+      }
+    },
+    {
+      "id": "stat-resolving-shape-distortion-in-non-stationary-time-series-via-tri-modal-syne",
+      "arxiv_id": "2605.25943",
+      "title": "STaT: Resolving Shape Distortion in Non-Stationary Time Series via Tri-Modal Synergy",
+      "abstract": "Recent research in time series forecasting frequently investigates the integration of textual and visual modalities with numerical models to better navigate non-stationary environments. Despite delivering solid numerical results, existing multi-modal approaches usually encounter a dilemma: prioritizing the minimization of average errors can result in excessively smooth forecasts that overlook essential fluctuations. To resolve this limitation, we introduce STaT, an innovative multimodal architecture for Symbolic-Temporal-Textual Alignment, which seamlessly unites three synergistic modalities. Specifically, the symbolic modality converts continuous time series into discrete tokens, facilitating the accurate identification of structural patterns and turning points; the temporal modality extracts inherent sequential dependencies; and the textual modality leverages domain semantics to steer the macroscopic forecasting trends. Comprehensive evaluations on eight real-world benchmarks indicate that STaT delivers exceptional performance, enhancing conventional magnitude indicators by up to 8.9% while simultaneously decreasing shape distortion by up to 8.5%.",
+      "venue": "",
+      "year": 2026,
+      "date": "2026-05-25",
+      "link": "https://arxiv.org/abs/2605.25943",
+      "code": "",
+      "notes": "",
+      "authors": "Hui Cheng, Jinsheng Guo, Zhenhao Weng, Yan Qiao, Meng Li",
+      "tags": {
+        "topic": "AI for Science",
+        "category": "Method",
+        "modality": "Multimodal"
+      }
+    },
+    {
+      "id": "multi-agent-systems-are-mixtures-of-experts-who-becomes-an-influencer",
+      "arxiv_id": "2605.25929",
+      "title": "Multi-Agent Systems are Mixtures of Experts: Who Becomes an Influencer?",
+      "abstract": "The effectiveness of multi-agent LLM deliberation depends not only on the agents' individual predictions, but also on how they communicate and collaborate. We study this mechanism through the lens of Friedkin-Johnsen (FJ) opinion dynamics, a tractable model for analyzing stubbornness, influence, and opinion change in multi-agent systems that captures empirically observed deliberation patterns. We show that the FJ parameters are input-dependent, turning multi-agent deliberation into a mixture of experts. This perspective implies that multi-agent systems can outperform single agents and static ensembles when routing reflects agent competence. Since competence is latent in practice, we analyze how influence is established through observable proxies: agents' self-assessed confidence, their perceived confidence, and initial alignment with other agents' views.",
+      "venue": "",
+      "year": 2026,
+      "date": "2026-05-25",
+      "link": "https://arxiv.org/abs/2605.25929",
+      "code": "",
+      "notes": "",
+      "authors": "Franka Bause, Jonas Niederle, Martin Pawelczyk, Rebekka Burkholz",
+      "tags": {
+        "topic": "Agent in Digital World",
+        "category": "Method",
+        "modality": "Text"
+      }
+    },
+    {
+      "id": "capability-and-robustness-cannot-both-be-free-an-information-theoretic-bound-for",
+      "arxiv_id": "2605.25889",
+      "title": "Capability and Robustness Cannot Both Be Free: An Information-Theoretic Bound for Vision-Language-Action Models",
+      "abstract": "Vision-Language-Action (VLA) models are increasingly deployed on real robots, where each predicted action is executed and each failure carries a safety cost. They reach high success rates on clean inputs but collapse under small adversarial perturbations. A $16/255$ PGD attack on OpenVLA-7B drops LIBERO success from above $95\\%$ to under $5\\%$. Empirical defenses recover some robustness at a cost in clean accuracy, but the literature does not say whether the trade-off has a theoretical floor. We prove that it does. For any VLA policy with discrete actions, the sum of capability (mutual information between policy action and oracle action) and robustness (mutual information preserved under adversarial perturbation, net of trivial channel leakage) is upper-bounded by a policy-independent budget: task entropy plus adversarial channel capacity. The proof is two applications of the Data Processing Inequality plus MI non-negativity. The pixel-level bound is loose on current models ($\\sim 10^3$ nats), but an encoder-specific corollary restricts the channel to the policy-relevant subspace, reducing the budget from $\\sim 5{,}000$ to $\\sim 31$ nats on OpenVLA; the policy already consumes $\\sim 24\\%$ of this tighter budget, leaving limited room for simultaneous robustness improvement. We validate the bound across $252$ closed-form Gaussian-VLA cells and $48$ OpenVLA-7B $\\times$ LIBERO $\\times$ PGD cells (zero violations). We propose encoder-specific slack as a normalized comparison axis for defense papers, and release all code, manifests, and results.",
+      "venue": "",
+      "year": 2026,
+      "date": "2026-05-25",
+      "link": "https://arxiv.org/abs/2605.25889",
+      "code": "",
+      "notes": "",
+      "authors": "Jianwei Tai",
+      "tags": {
+        "topic": "Agent in Physical World",
+        "category": "Method",
+        "modality": "Multimodal"
+      }
+    },
+    {
+      "id": "unate-unsupervised-atomic-embedding-for-crystal-structures-property-prediction",
+      "arxiv_id": "2605.25866",
+      "title": "UNATE: UNsupervised ATomic Embedding for crystal structures property prediction",
+      "abstract": "Accurately predicting crystal properties is critical for accelerating materials discovery, but it is often limited by scarce labeled data and costly theoretical calculations. To alleviate this, we propose UNATE (Unsupervised Atomic Embedding), a framework that leverages structural information extracted from unlabeled crystal structures. UNATE integrates an unsupervised denoising autoencoder with self-supervised contrastive learning to learn robust atomic representations, which are then used as input features for downstream property prediction. Experimental results show that replacing raw atomic numbers with UNATE-pretrained node embeddings yields a 2.7\\% improvement over the full-data baseline. Notably, the benefits become more pronounced in scenarios with limited labeled data, reaching improvements of up to 10\\% when only 25\\% of the labeled data is used.",
+      "venue": "",
+      "year": 2026,
+      "date": "2026-05-25",
+      "link": "https://arxiv.org/abs/2605.25866",
+      "code": "",
+      "notes": "",
+      "authors": "Laura Solà-Garcia, Àlex Solé, Javier Ruiz-Hidalgo",
+      "tags": {
+        "topic": "AI for Science",
+        "category": "Method",
+        "modality": "Text"
+      }
+    },
+    {
+      "id": "when-self-belief-misleads-active-label-acquisition-for-reinforcement-learning-wi",
+      "arxiv_id": "2605.25864",
+      "title": "When Self-Belief Misleads: Active Label Acquisition for Reinforcement Learning with Verifiable Rewards",
+      "abstract": "Large Language Models (LLMs) have achieved remarkable advancements in reasoning capabilities empowered by Reinforcement Learning with Verifiable Rewards (RLVR). Nonetheless, RLVR intrinsically relies on ground-truth labels for reward computation, the acquisition of which is often prohibitively expensive in real-world scenarios. While unsupervised RLVR paradigms attempt to circumvent this by training on pseudo-labels, they are notoriously susceptible to training collapse. Moreover, different samples often exhibit varying annotation values. In this paper, we propose Reinforcement Learning with Active Verifiable Rewards (RLAVR), which actively acquires ground-truth labels for a small set of selected samples and integrates them with pseudo-labels, thereby stabilizing training dynamics and improving performance under limited annotation budgets. To identify valuable samples, we propose the Corrective Advantage Gap (CAG) metric and analyze the sample-level supervision value. Building on this, we introduce Correction-Aware Reliability Estimation for RLAVR (CARE), which translates the oracle CAG criterion into a practical pre-query acquisition policy to substantially improve training stability. Extensive experiments across diverse domains, model families, and model scales demonstrate the effectiveness and generality of our approach. Our code is available at https://github.com/Lumina04/CARE.",
+      "venue": "",
+      "year": 2026,
+      "date": "2026-05-25",
+      "link": "https://arxiv.org/abs/2605.25864",
+      "code": "https://github.com/Lumina04/CARE",
+      "notes": "",
+      "authors": "Li Wang, Xiaodong Lu, Xiaohan Wang, Yikun Ban, Jiajun Chai et al.",
+      "tags": {
+        "topic": "LLM Reasoning & Planning",
+        "category": "Method",
+        "modality": "Text"
+      }
+    },
+    {
+      "id": "tiar-trajectory-informed-advantage-reweighting-for-llm-abstention-learning",
+      "arxiv_id": "2605.25850",
+      "title": "TIAR: Trajectory-Informed Advantage Reweighting for LLM Abstention Learning",
+      "abstract": "This paper investigates large language model (LLM) abstention learning, specifically using ternary reward, which incentivize truthfulness in large language models. This paper extends that idea by moving from a ternary reward to a Trajectory-Informed advantage reweighting, dynamically re-weights the abstention reward during Group Relative Policy Optimization (GRPO) training. The objective of this work focuses on abstention learning instead of improving truthfulness, serving as an exploration into hallucination reduction. The novelty of this paper lies in methodological innovation, advantage re-weighting, and benchmark selection. Leveraging GRPO's multiple trajectories as a natural abstention signal, this method uses a reward signal to explore knowledge boundaries and encourage consistency. By demonstrating that trajectories can be used as a confidence indicator of the policy relative to the query, they are then used to dynamically calculate the abstention advantage. AbstentionBench is used as the evaluation benchmark, as this work aims to contribute to the field of abstention learning. All datasets on the benchmark were tested against this method and various baselines. Empirical results demonstrate that TIAR achieves state-of-the-art abstention F1 scores across five of six evaluation categories, outperforming the static ternary baseline on 17 of 31 benchmark datasets while fully preserving baseline accuracy.",
+      "venue": "",
+      "year": 2026,
+      "date": "2026-05-25",
+      "link": "https://arxiv.org/abs/2605.25850",
+      "code": "",
+      "notes": "",
+      "authors": "Muyu Pan, Shu Zhao, Nan Zhang, Philip Shin, Varun Parekh et al.",
+      "tags": {
+        "topic": "LLM Reasoning & Planning",
+        "category": "Method",
+        "modality": "Text"
+      }
+    },
+    {
+      "id": "clarify-abstain-or-answer-strategising-in-conversation-with-belief-augmented-gen",
+      "arxiv_id": "2605.25831",
+      "title": "Clarify, Abstain or Answer? Strategising in Conversation with Belief-Augmented Generation",
+      "abstract": "Large language models (LLMs) define a distribution over text, which can be viewed as a probabilistic representation of uncertainty: sampling K responses yields a belief state - responses a model deems plausible. Existing work exploits this representation for narrow tasks like either decoding or selective prediction, and often requires manual interventions, not controlling generation directly. We propose Belief-Augmented Generation (BAG): grounding LLMs in their own belief state via the prompt and letting them reason over these K samples to decide on a conversational strategy: answer, clarify, or abstain. In a multi-turn ambiguous QA setting, we find that LLMs by default rarely clarify or abstain, ignoring uncertainty about the input or facts. BAG improves QA accuracy across six models and yields strategy decisions more faithful to the belief state than prompt-only baselines. Disentangling when to clarify from when to abstain, however, remains challenging.",
+      "venue": "",
+      "year": 2026,
+      "date": "2026-05-25",
+      "link": "https://arxiv.org/abs/2605.25831",
+      "code": "",
+      "notes": "",
+      "authors": "Joris Baan, Wilker Aziz, Barbara Plank, Raquel Fernández",
+      "tags": {
+        "topic": "LLM Reasoning & Planning",
+        "category": "Method",
+        "modality": "Text"
+      }
+    },
+    {
+      "id": "branched-signature-kernel-solvers-for-odes-with-rough-single-trajectory-signals",
+      "arxiv_id": "2605.25826",
+      "title": "Branched Signature Kernel Solvers for ODEs with rough Single-Trajectory signals",
+      "abstract": "We develop a branched signature kernel solver for linear and nonlinear ordinary differential equations driven by a \\emph{single observed trajectory} of a possibly rough forcing signal -- a setting that arises naturally in earthquake engineering, finance, biology, and structural health monitoring, where the forcing is observed exactly once and the solver must respect the underlying physical law without recourse to an ensemble of realizations. Two ingredients are new. First, a \\emph{count-sampling} construction turns the single observation into a hierarchical family of $N+1$ nested training paths on which the branched signature kernel can be evaluated; this allows the signature kernel machinery, originally designed for multi-realization regression problems, to operate on a single-trajectory observation. Second, a kernel-collocation framework places the ansatz either on the highest-order derivative of the solution (with lower derivatives recovered by integrating the kernel) or on the solution itself (after $m$-fold integration of the ODE). We prove a universal approximation theorem for the branched signature kernel, leveraging the Hairer--Kelly morphism to express branched signature evaluations through geometric signatures of time-extended paths. The offline solver is extended to a streaming Test/Train/Retrain protocol with closed-form online updates in the linear case and scalar Newton steps in the nonlinear case. Numerical experiments on six benchmarks (El-Centro earthquake displacement, the Solow capital-stock model, an fBM-driven second-order ODE, a forced Duffing oscillator, a path-dependent Arias-intensity-degraded oscillator with variable coefficients, and a noisy Kuramoto phase-oscillator system) show that the branched signature-kernel solver delivers accurate, stable predictions across all regimes.",
+      "venue": "",
+      "year": 2026,
+      "date": "2026-05-25",
+      "link": "https://arxiv.org/abs/2605.25826",
+      "code": "",
+      "notes": "",
+      "authors": "Munawar Ali, Qi Feng, Charlie Pyle, George Xu",
+      "tags": {
+        "topic": "AI for Science",
+        "category": "Method",
+        "modality": "Text"
+      }
+    },
+    {
+      "id": "visual-redundancy-controlled-parallel-decoding-for-diffusion-based-multimodal-la",
+      "arxiv_id": "2605.25820",
+      "title": "Visual-Redundancy-Controlled Parallel Decoding for Diffusion-Based Multimodal Large Language Models",
+      "abstract": "Diffusion-based multimodal large language models (dMLLMs) decode by iteratively predicting tokens at multiple masked positions in parallel. This turns each decoding step into a position-selection problem: the model must choose not only which predictions are reliable in isolation, but also which positions should be committed together as context for later decoding steps. Existing confidence-based decoding ranks masked positions independently and commits the top-K positions, largely ignoring whether the committed tokens provide complementary visual grounding. We identify a step-level limitation of this strategy in multimodal settings: high-confidence tokens selected in the same step can rely on overlapping visual grounding, introducing visual redundancy among the committed tokens and leaving less complementary visual grounding available for later decoding. To quantify this effect, we introduce the Visual Redundancy Index (VRI), which measures visual grounding overlap among tokens committed in parallel. To control this redundancy during decoding, we propose Visual-Redundancy-Controlled Decoding (VRCD), a training-free inference-time decoding method that uses token-to-image attention to prioritize visually complementary positions. Across diverse multimodal benchmarks, VRCD reduces visual redundancy and remaining-position entropy with modest runtime overhead. In longer decoding experiments, it also achieves relative accuracy gains of up to 18.8% on M^3CoT and 6.9% on MMBench over confidence-based decoding. Code will be released at https://github.com/infiniteYuanyl/VRCD.",
+      "venue": "",
+      "year": 2026,
+      "date": "2026-05-25",
+      "link": "https://arxiv.org/abs/2605.25820",
+      "code": "https://github.com/infiniteYuanyl/VRCD",
+      "notes": "",
+      "authors": "Yulin Yuan, Hongshuo Zhao, Xiangming Meng",
+      "tags": {
+        "topic": "MLLM Reasoning & Planning",
+        "category": "Method",
+        "modality": "Multimodal"
+      }
+    },
+    {
+      "id": "npsolver-neural-poisson-solver-with-iterative-physics-supervision",
+      "arxiv_id": "2605.25786",
+      "title": "NPSolver: Neural Poisson Solver with Iterative Physics Supervision",
+      "abstract": "Efficiently solving Poisson equations on complex, irregular domains remains a fundamental challenge in scientific computing, as classical iterative solvers often suffer from prohibitive runtime due to ill-conditioned systems. While neural operators offer a fast alternative, they typically rely on large-scale labeled datasets or struggle with unstable training dynamics when using physics-informed residual losses. We propose \\textsc{NPSolver}, a neural Poisson solver trained without solution labels via iterative physics supervision. Instead of relying on fully converged numerical solutions or raw PDE residuals, \\textsc{NPSolver} utilizes a small number of preconditioned conjugate gradient (PCG) steps to refine its own predictions, providing a more stable and well-scaled training signal. Theoretical analysis confirms that this iterative supervision serves as a well-conditioned error proxy and that a stop-gradient design is essential for optimization stability. To better capture boundary-driven features under mixed boundary conditions, we further introduce the Boundary-Aware Transolver (\\textsc{BA-Transolver}) architecture that explicitly separates interior and boundary tokenization. Extensive evaluations on 2D and 3D irregular geometries demonstrate that \\textsc{NPSolver} outperforms both physics-informed and data-driven baselines. Furthermore, a downstream thermal control task highlights the model's capability for conducting efficient and reliable gradient-based boundary control. We will release our codes and data at https://github.com/intell-sci-comput/NPSolver.",
+      "venue": "",
+      "year": 2026,
+      "date": "2026-05-25",
+      "link": "https://arxiv.org/abs/2605.25786",
+      "code": "https://github.com/intell-sci-comput/NPSolver",
+      "notes": "",
+      "authors": "Bocheng Zeng, Rui Zhang, Runze Mao, Mengtao Yan, Xuan Bai et al.",
+      "tags": {
+        "topic": "AI for Science",
+        "category": "Method",
+        "modality": "Text"
+      }
+    },
+    {
+      "id": "machine-learning-multiscale-interactions",
+      "arxiv_id": "2605.25710",
+      "title": "Machine Learning Multiscale Interactions",
+      "abstract": "Realistic physical systems are characterised by emergent interactions across multiple length and time scales, posing a significant challenge for predictive machine learning (ML) models. Most scientific ML models focus on a narrow range of interactions. While machine learning force fields (MLFFs) offer near-quantum accuracy, the ubiquitous message-passing layers miss long-range many-body effects. Here we introduce the Multiscale Structural Ensemble (MuSE), a hierarchical model that uses Soft Coarse-Graining Pooling to construct coarse representations from smooth fractional assignments of atoms to coarse nodes, enabling MLFF modules to operate across multiple scales. MuSE is architecture-agnostic and coupled with SO3krates, MACE, and PaiNN MLFFs for both molecules and materials. We demonstrate the power of MuSE through Hessian-based benchmarks, folding trajectories for biomolecules, and energy profiles in molecule-graphene nanostructures, where MuSE accurately captures quantum-mechanical interactions at relevant scales -- unlike other recent long-range ML models.",
+      "venue": "",
+      "year": 2026,
+      "date": "2026-05-25",
+      "link": "https://arxiv.org/abs/2605.25710",
+      "code": "",
+      "notes": "",
+      "authors": "Àlex Solé, Sergio Suárez-Dou, Albert Mosella-Montoro, Silvia Gómez-Coca, Eliseo Ruiz et al.",
+      "tags": {
+        "topic": "AI for Science",
+        "category": "Method",
+        "modality": "Text"
+      }
     }
   ]
 }
