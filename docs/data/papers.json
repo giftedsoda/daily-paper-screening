@@ -82518,6 +82518,348 @@
         "category": "Method",
         "modality": "Multimodal"
       }
+    },
+    {
+      "id": "before-the-shutter-aesthetic-and-actionable-portrait-photography-planning-in-3d-",
+      "arxiv_id": "2605.30318",
+      "title": "Before the Shutter: Aesthetic and Actionable Portrait Photography Planning in 3D Scenes",
+      "abstract": "Portrait photography is largely decided before the shutter opens: the subject's pose, the camera configuration, and the lighting devices must be coordinated within the surrounding 3D scene. In contrast, most existing computational methods focus on post-production in 2D image space, such as retouching, relighting, or editing images that already exist; pre-capture photographic planning remains largely unexplored. We introduce 3D aesthetic portrait planning, the task of generating human pose, camera, lighting, and exposure plans that produce visually compelling portraits while satisfying geometric and photometric feasibility in a 3D scene. Our approach builds a Photographic Scene Graph that represents scene affordances, subject-scene relations, and portrait-relevant lighting structure. Built on this representation, we perform aesthetic-guided comparative planning over previous attempts and current viewfinder observations. Experiments across diverse indoor and outdoor scenes show that our method produces portraits preferred by human raters and MLLM evaluators over competitive baselines, while maintaining high physical plausibility. Together, our results suggest a path from post-capture correction toward pre-capture computational portrait planning. Project repository: https://github.com/songrise/Before-the-Shutter",
+      "venue": "",
+      "year": 2026,
+      "date": "2026-05-28",
+      "link": "https://arxiv.org/abs/2605.30318",
+      "code": "https://github.com/songrise/Before-the-Shutter",
+      "notes": "",
+      "authors": "Ruixiang Jiang, Chang Wen Chen",
+      "tags": {
+        "topic": "Agent in Physical World",
+        "category": "Method",
+        "modality": "Multimodal"
+      }
+    },
+    {
+      "id": "evaluation-of-conversational-agents-understanding-culture-context-and-environmen",
+      "arxiv_id": "2605.30099",
+      "title": "Evaluation of Conversational Agents: Understanding Culture, Context and Environment in Emotion Detection",
+      "abstract": "Valuable decisions and highly prioritized analysis now depend on applications such as facial biometrics, social media photo tagging, and human robots interactions. However, the ability to successfully deploy such applications is based on their efficiencies on tested use cases taking into consideration possible edge cases. Over the years, lots of generalized solutions have been implemented to mimic human emotions including sarcasm. However, factors such as geographical location or cultural difference have not been explored fully amidst its relevance in resolving ethical issues and improving conversational AI (Artificial Intelligence). In this paper, we seek to address the potential challenges in the usage of conversational AI within Black African society. We develop an emotion prediction model with accuracies ranging between 85% and 96%. Our model combines both speech and image data to detect the seven basic emotions with a focus on also identifying sarcasm. It uses 3-layers of the Convolutional Neural Network in addition to a new Audio-Frame Mean Expression (AFME) algorithm and focuses on model pre-processing and post-processing stages. In the end, our proposed solution contributes to maintaining the credibility of an emotion recognition system in conversational AIs.",
+      "venue": "",
+      "year": 2026,
+      "date": "2026-05-28",
+      "link": "https://arxiv.org/abs/2605.30099",
+      "code": "",
+      "notes": "",
+      "authors": "Martha Teiko Teye, Yaw Marfo Missah, Emmanuel Ahene, Twum Frimpong, Auxane Boch",
+      "tags": {
+        "topic": "Agent in Digital World",
+        "category": "Survey",
+        "modality": "Multimodal"
+      }
+    },
+    {
+      "id": "fruc-feedforward-dynamic-scene-reconstruction-from-uncalibrated-collaborative-dr",
+      "arxiv_id": "2605.29997",
+      "title": "FRUC: Feedforward Dynamic Scene Reconstruction from Uncalibrated Collaborative Driving Views",
+      "abstract": "We present FRUC, a feed-forward 3D Gaussian splatting framework for dynamic scene reconstruction from uncalibrated collaborative driving views. Existing multi-agent reconstruction frameworks are often hindered by rigid prerequisites, demanding precise spatial calibration and slow per-scene optimization. In this paper, we rethink this task by conceptualizing a distributed multi-vehicle network as a spatio-temporally unstructured ego-centric multi-camera system, where the core challenge lies in enhancing ego-centric occluded geometry through collaboration without degrading the ego's accurately observed visible geometry, while preserving reconstruction efficiency. For efficient reconstruction, FRUC is built upon a visual grounded geometric Transformer backbone to enable one-shot, calibration-free inference from a flexible number of multi-vehicle views. To achieve non-destructive geometric supplementation under uncalibrated cross-agent misalignment, FRUC first introduces an ego-centric causal occlusion field that explicitly derives occlusion evolution as latent priors by modeling agent-wise spatio-temporal correlations. Guided by these occlusion priors, it further formulates cross-agent integration as a deterministic residual denoising process via zero-initialized injection, turning challenging cross-agent fusion into bounded residual learning for robust collaborative blind-spot completion. Through extensive evaluations on the real-world V2XReal and UrbanIng-V2X datasets, FRUC is shown to be a new state-of-the-art for the scene reconstruction of dynamic collaborative driving environments, significantly outperforming existing methods in both rendering quality and efficiency.",
+      "venue": "",
+      "year": 2026,
+      "date": "2026-05-28",
+      "link": "https://arxiv.org/abs/2605.29997",
+      "code": "",
+      "notes": "",
+      "authors": "Yihang Tao, Yu Guo, Zhengru Fang, Haonan An, Yuguang Fang",
+      "tags": {
+        "topic": "Agent in Physical World",
+        "category": "Method",
+        "modality": "Video"
+      }
+    },
+    {
+      "id": "cogniverse-revolutionizing-multi-modal-retrieval-augmented-generation-with-cogni",
+      "arxiv_id": "2605.29602",
+      "title": "CogniVerse: Revolutionizing Multi-Modal Retrieval-Augmented Generation with Cognitive Reflection and Geometric Reasoning",
+      "abstract": "Multi-modal Retrieval-Augmented Generation (MMRAG) has emerged as a powerful paradigm for enhancing Multimodal Large Language Models in knowledge-intensive question answering by integrating external visual, textual, and structural knowledge. However, existing MMRAG frameworks suffer from critical limitations, including noisy and irrelevant retrieval, cross-modal semantic misalignment, lack of adaptive reasoning, and incoherent generation across local and global contexts. We introduce \\textbf{CogniVerse}, a novel MMRAG framework that addresses these challenges through a cognitive-inspired, mathematically rigorous approach. Drawing from human-like reasoning, CogniVerse integrates three synergistic components: (1) a Cognitive Reflection Module that dynamically assesses retrieval necessity and filters relevant multi-modal content, reducing noise and computational overhead; (2) a Multi-modal Retrieval Module that aligns embeddings in a Riemannian manifold using information geometry and refines knowledge graphs via spectral graph theory, ensuring precise and coherent retrieval; and (3) a Hierarchical Generation Module that employs an optimal transport-based loss to balance token-level accuracy and global semantic coherence. Extensive experiments demonstrate that CogniVerse significantly outperforms state-of-the-art systems in both accuracy and coherence, while reducing retrieval latency.",
+      "venue": "CVPR 2026",
+      "year": 2026,
+      "date": "2026-05-28",
+      "link": "https://arxiv.org/abs/2605.29602",
+      "code": "",
+      "notes": "",
+      "authors": "Xiang Fang, Wanlong Fang, Changshuo Wang",
+      "tags": {
+        "topic": "MLLM Reasoning & Planning",
+        "category": "Method",
+        "modality": "Multimodal"
+      }
+    },
+    {
+      "id": "dissociative-identity-language-model-agents-lack-grounding-for-reputation-mechan",
+      "arxiv_id": "2605.30169",
+      "title": "Dissociative Identity: Language Model Agents Lack Grounding for Reputation Mechanisms",
+      "abstract": "As autonomous language model agents proliferate, forming an emerging agentic web with real-world consequences, what credibility signals can you use to decide whether to trust an unfamiliar agent in the wild and delegate to it? A natural governance intuition is to extend human identity verification and reputation mechanisms, from ``Know Your Customer'' and credit scores to ``Know Your Agent'' regimes. However, we argue that this analogy is fundamentally incomplete. Reputation mechanisms function both as social signals and as corrective feedback that sustain an equilibrium of trustworthy behavior, presuming a persistent identity associated with behavioral continuity, sanction sensitivity, and costly non-fungibility. Yet language model agents are ontologically \\emph{dissociative}: they are essentially an assemblage of mutable modules -- foundational models, system prompts, tool-access policies, external memory, and, in some cases, a multi-agent system as a whole -- any of which may change agent behavior -- with a fluid persona that is also vulnerable to adversarial attack and may not internalize sanctions. Drawing on dissociative identity disorder jurisprudence, this dissociativity leaves agents without grounding for identifiability, predictability, credibility, and rehabilitability -- the very properties that reputation mechanisms aim to sustain -- thereby collapsing trust. We argue that identity-based, ex post, regulative, sanction-based governance, such as reputation, is structurally inapplicable to dissociative agents, and we suggest a shift to observability-based, ex ante, constitutive, protocol-based behavioral harnesses.",
+      "venue": "FaccT 2026",
+      "year": 2026,
+      "date": "2026-05-28",
+      "link": "https://arxiv.org/abs/2605.30169",
+      "code": "",
+      "notes": "",
+      "authors": "Botao Amber Hu, Helena Rong, Max Van Kleek",
+      "tags": {
+        "topic": "Agent in Digital World",
+        "category": "Survey",
+        "modality": "Text"
+      }
+    },
+    {
+      "id": "a-heterogeneous-architecture-for-robot-rl-beyond-gpu-dominant-paradigms",
+      "arxiv_id": "2605.30313",
+      "title": "A Heterogeneous Architecture for Robot RL Beyond GPU-Dominant Paradigms",
+      "abstract": "Simulation-based RL for contemporary robot control is increasingly organized around GPU-resident simulation: physics, rollout collection, and learning are placed on a single GPU-centric execution path. This paradigm has greatly improved training speed, but it has also encouraged a default assumption that efficient training requires physics to reside on the GPU. We revisit this assumption. Our view is that, in simulation-dominated robot control, the essential question is not which processor runs physics, but whether simulation throughput, policy learning, and runtime synchronization form an efficient end-to-end loop. We present UniLab, a heterogeneous CPU-simulation / GPU-learning architecture that decouples CPU-parallel simulation from GPU policy updates through a unified runtime for data movement, buffering, and synchronization. UniLab is implemented as a complete and extensible training system using MuJoCoUni and MotrixSim CPU-batched physics backends, supporting PPO, SAC, FlashSAC, TD3, and APPO. On representative simulation-based robot control tasks, UniLab improves end-to-end training efficiency by 3--10$\\times$ under the same hardware configuration, while reducing dependence on the NVIDIA CUDA-based software stack and supporting cross-platform execution on the Apple macOS platform and the AMD ROCm and Intel XPU accelerator backends. These results show that GPU simulation is an effective path to efficient training, but not a necessary one, broadening the practical system choices available for robot RL training. Project page: https://github.com/unilabsim/UniLab.",
+      "venue": "",
+      "year": 2026,
+      "date": "2026-05-28",
+      "link": "https://arxiv.org/abs/2605.30313",
+      "code": "https://github.com/unilabsim/UniLab",
+      "notes": "",
+      "authors": "Yufei Jia, Zhanxiang Cao, Mingrui Yu, Heng Zhang, Shenyu Chen et al.",
+      "tags": {
+        "topic": "Agent in Physical World",
+        "category": "Method",
+        "modality": "Multimodal"
+      }
+    },
+    {
+      "id": "gaze2act-gaze-conditioned-vision-language-action-policies-for-interactive-robot-",
+      "arxiv_id": "2605.30282",
+      "title": "Gaze2Act: Gaze-Conditioned Vision-Language-Action Policies for Interactive Robot Manipulation",
+      "abstract": "Vision-Language-Action (VLA) models have recently shown strong potential for robot learning by following language instructions. However, in practice, language alone is often insufficient to precisely convey human intent. It is difficult to describe which exact object to interact with among similar candidates, where to act on the object, or how the target may change during execution. To address this limitation, we propose Gaze2Act, a novel VLA framework that leverages human gaze as a dynamic and intuitive intent signal for complex interactive manipulation. Gaze2Act first bridges the ego-exo view gap by mapping first-person gaze into the robot's perspective through cross-view semantic matching, producing both an object mask and a gaze point for coarse-to-fine target specification. These cues are then integrated into the policy through perception-level prompting and action-level conditioning, allowing the robot to attend to relevant regions and execute precise interactions under dynamic intent. In a systematic evaluation across seven task categories and 16 real-robot tasks on a Unitree G1 humanoid, Gaze2Act achieves state-of-the-art performance in both intent accuracy and task success rate. It notably outperforms baselines in object disambiguation, fine-grained interaction, and dynamic intent steering. These results demonstrate that human gaze provides a natural, low-burden, and highly expressive modality for human-in-the-loop VLA control.",
+      "venue": "",
+      "year": 2026,
+      "date": "2026-05-28",
+      "link": "https://arxiv.org/abs/2605.30282",
+      "code": "",
+      "notes": "",
+      "authors": "Kuangji Zuo, Gen Li, Bofan Lyu, Yanshuo Lu, Boyu Ma et al.",
+      "tags": {
+        "topic": "Agent in Physical World",
+        "category": "Method",
+        "modality": "Multimodal"
+      }
+    },
+    {
+      "id": "replicable-simulation-based-robot-validation-through-provenance",
+      "arxiv_id": "2605.29973",
+      "title": "Replicable Simulation-Based Robot Validation through Provenance",
+      "abstract": "Robot behavior is often validated through simulation-based testing, yet the replicability of such campaigns depends critically on transparent documentation of how tests are configured, executed, and post-processed. We argue that data provenance, coupled with the FAIR principles (findability, accessibility, interoperability, and reusability), addresses this gap by explicitly tracking links between artifacts and by attaching machine-readable metadata about file origins and key design decisions. Moreover, provenance and metadata cannot be treated as an afterthought confined to final datasets; they must be integrated into the testing processes that generate those datasets so that evidence can be reconstructed end-to-end. We demonstrate this by augmenting an existing simulation-based testing framework with provenance tracking and metadata collection mechanisms, and by using these extensions to enrich a mobile robot navigation dataset with structured provenance and FAIR-aligned metadata. Finally, we discuss obstacles encountered in this integration -- such as vocabulary alignment, attribute selection, and adoption of domain standards -- and provide actionable recommendations for implementing provenance-centric, FAIR metadata in robotics validation workflows.",
+      "venue": "",
+      "year": 2026,
+      "date": "2026-05-28",
+      "link": "https://arxiv.org/abs/2605.29973",
+      "code": "",
+      "notes": "",
+      "authors": "Argentina Ortega, Samuel Wiest, Frederik Pasch, Nico Hochgeschwender",
+      "tags": {
+        "topic": "Agent in Physical World",
+        "category": "Method",
+        "modality": "Multimodal"
+      }
+    },
+    {
+      "id": "fisher-preserving-guidance-training-free-manifold-constraints-for-safe-diffusion",
+      "arxiv_id": "2605.29937",
+      "title": "Fisher-Preserving Guidance: Training-Free Manifold Constraints for Safe Diffusion Control",
+      "abstract": "Diffusion models are effective for waypoint prediction in visual navigation, but standard sampling and test time guidance can produce unreliable or inefficient trajectories when updates drift off the training manifold. We propose Fisher Preserving Guidance with Outer Product Span Projection, a training-free inference method that avoids large Fisher drift associated with off-distribution actions while optimizing a task objective. Our method computes the Fisher-preserving update via a low-rank Jacobian factorization, requiring only a single backward pass per step and enabling real-time use. We further introduce Truncated Fisher Denoising Sensitivity as an uncertainty signal and use it for robust multi-sample action blending. Experiments on toy and realistic navigation benchmarks, including Maze2D with TSDF-based guidance, PushT with official Diffusion Policy weights, and visual navigation in simulation and on real robots, demonstrate consistent improvements in performance over strong diffusion-policy baselines without additional training.",
+      "venue": "",
+      "year": 2026,
+      "date": "2026-05-28",
+      "link": "https://arxiv.org/abs/2605.29937",
+      "code": "",
+      "notes": "",
+      "authors": "Hao Ren, Zetong Bi, Yiming Zeng, Le Zheng, Zhi Li et al.",
+      "tags": {
+        "topic": "Agent in Physical World",
+        "category": "Method",
+        "modality": "Image"
+      }
+    },
+    {
+      "id": "llm-guided-future-hypotheses-for-horizon-aware-exploration-in-multi-step-robot-m",
+      "arxiv_id": "2605.29864",
+      "title": "LLM-Guided Future Hypotheses for Horizon-Aware Exploration in Multi-Step Robot Manipulation",
+      "abstract": "Multi-step robot manipulation requires acting under uncertainty about how the scene will evolve, making exploration and policy adaptation challenging. We study whether short-horizon, task-consistent future videos can provide useful structured priors for control and reinforcement-learning fine-tuning. We formalize this idea through Future-Experience Conditioning (FEC), a simple interface that conditions closed-loop policies on a latent representation of a short future video. In our simulation setup, future clips are generated in three stages, an LLM reasoner operating over a task ontology initialized from the current scene state, a robot-free digital-twin rollout of the intended object motion, and a mask-free video diffusion model that synthesizes a robot-consistent future clip without requiring segmentation at inference. We instantiate this future-conditioning interface primarily with BC and BC+RL, and compare against a future-conditioned Streaming Flow Policy (SFP) baseline on RoboCasa and CALVIN under NoFuture, GTFuture, GenFuture, and WrongFuture. Generated futures improve performance over no-future conditioning, while mismatched futures degrade it, and our BC+RL instantiation achieves the strongest overall results. An average BC+RL learning-curve analysis across 8 CALVIN tasks further shows that GTFuture improves fastest, GenFuture improves earlier and to a higher level than NoFuture, and WrongFuture remains at zero throughout training. These results suggest that short-horizon future videos can serve as useful structured priors for exploration and policy adaptation under imperfect future predictions. https://enact2026.github.io/",
+      "venue": "",
+      "year": 2026,
+      "date": "2026-05-28",
+      "link": "https://arxiv.org/abs/2605.29864",
+      "code": "",
+      "notes": "",
+      "authors": "Mohammad Khoshnazar, Andrew Melnik, Michael Beetz",
+      "tags": {
+        "topic": "Agent in Physical World",
+        "category": "Method",
+        "modality": "Multimodal"
+      }
+    },
+    {
+      "id": "mars-policy-multimodality-only-when-it-matters",
+      "arxiv_id": "2605.29766",
+      "title": "MARS Policy: Multimodality Only When It Matters",
+      "abstract": "Imitation learning has become a cornerstone for solving complex robotic manipulation tasks. In particular, multimodality, which enables robots to capture diverse yet valid behavioral patterns, has driven the rapid emergence of generative policies as a dominant paradigm in robot learning. However, achieving such multimodality typically relies on stochastic noise initialization and iterative denoising procedures, resulting in substantial training complexity and low inference efficiency. Meanwhile, not all phases of a robotic task inherently require behavioral diversity. Motivated by this insight, we propose the Modality-Adaptive Robot Sampling (MARS) policy, which adaptively invokes tailored stochasticity only when it is truly beneficial, while reverting to an efficient deterministic learning during single-modal phases. In other words, the proper amount of noise is injected only at the proper time. By selectively activating multimodal generation, MARS policy bridges the gap between the multimodal capability of generative policies and the superior training and inference efficiency of deterministic models. Empirical studies across 8 simulated and 4 real-world tasks demonstrate that MARS exhibits robust multimodal expressivity and high efficiency, with a 16.67% success rate improvement and an 83.20% inference latency reduction in real-world tests. Counterintuitively, MARS also outpaces deterministic policies in training efficiency on near-deterministic tasks by more effectively modeling nuanced action diversity.",
+      "venue": "",
+      "year": 2026,
+      "date": "2026-05-28",
+      "link": "https://arxiv.org/abs/2605.29766",
+      "code": "",
+      "notes": "",
+      "authors": "Jindou Jia, Tuo An, Yuxuan Hu, Gen Li, Jingliang Li et al.",
+      "tags": {
+        "topic": "Agent in Physical World",
+        "category": "Method",
+        "modality": "Multimodal"
+      }
+    },
+    {
+      "id": "phail-a-real-robot-vla-benchmark-and-distributional-methodology",
+      "arxiv_id": "2605.29710",
+      "title": "PhAIL: A Real-Robot VLA Benchmark and Distributional Methodology",
+      "abstract": "Real-world evaluation of vision-language-action (VLA) policies still rests on binary success rate at a fixed timeout with $N \\le 25$ rollouts per condition, almost always without confidence intervals or paired statistical comparison; these cohort sizes struggle to resolve close comparisons reliably. We introduce PhAIL (Physical AI Leaderboard, https://phail.ai), an open real-robot benchmark on a Franka FR3 (dataset, per-rollout artifacts, and end-to-end reference implementation) of a distributional evaluation methodology: the time-to-success cumulative distribution function (CDF) as the evaluation primitive, with two separated jobs. The first is scoring via Human-Relative Throughput (HRT), a dimensionless scalar with bootstrap confidence intervals, anchored to same-fixture human teleoperation. The second is a significance test (Kolmogorov-Smirnov, computed per-object and macro-averaged across objects). On four publicly-available VLAs, the macro-averaged KS test resolves two close comparisons (GR00T vs. ACT, OpenPI vs. ACT) at $N \\le 30$ rollouts per (model, object) cell where binary-threshold metrics do not; the closest pair (OpenPI vs. GR00T) remains unresolved within our budget. The best evaluated VLA is $\\sim 7\\times$ slower per operation (RMST ratio) than the human reference.",
+      "venue": "",
+      "year": 2026,
+      "date": "2026-05-28",
+      "link": "https://arxiv.org/abs/2605.29710",
+      "code": "https://github.com/Positronic-Robotics/phail-paper",
+      "notes": "",
+      "authors": "Sergey Arkhangelskiy",
+      "tags": {
+        "topic": "Agent in Physical World",
+        "category": "Benchmark",
+        "modality": "Multimodal"
+      }
+    },
+    {
+      "id": "flip-real-time-and-resilient-formation-planning-for-large-scale-distributed-swar",
+      "arxiv_id": "2605.29704",
+      "title": "FLIP: Real-Time and Resilient Formation Planning for Large-Scale DIstributed Swarms via Point Cloud Registration",
+      "abstract": "Traditional large-scale formation planning either oversimplify the formation representation which leads to poor performance, or they employ complete collaborative relationships, which results in excessive computational load. To achieve high-performance and large-scale formation planning, we transform the Optimal Formation Position Sequence \\cite{c1} (OFPS) calculation problem into a spatiotemporal Point Cloud Registration (PCR) problem. Each agent derives its OFPS by distributively computing the matching result between current positions and the desired formation positions of all other agents. Then each agent optimizes the cooperative formation trajectory by using OFPS. We leverage the PCR method with outlier rejection to rapidly perform large-scale formation position registration. This prevents suboptimal trajectories and failed agents from propagating through the cooperative network and affecting more agents. Consequently, we uniformly achieve resilient, efficient, and distributed trajectory planning for large-scale swarms. The effectiveness and the superiority of the proposed method are demonstrated through large-scale simulations of 120-drone formation, and rigorous benchmarking against state-of-the-art (SOTA) methods.",
+      "venue": "",
+      "year": 2026,
+      "date": "2026-05-28",
+      "link": "https://arxiv.org/abs/2605.29704",
+      "code": "",
+      "notes": "",
+      "authors": "Yuan Zhou, Guangtong Xu, Zhenyu Hou, Jialiang Hou, Fei Gao",
+      "tags": {
+        "topic": "Agent in Physical World",
+        "category": "Method",
+        "modality": "Multimodal"
+      }
+    },
+    {
+      "id": "exact-mppi-exact-signed-distance-navigation-for-arbitrary-footprint-robots-from-",
+      "arxiv_id": "2605.29663",
+      "title": "EXACT-MPPI: Exact Signed-Distance Navigation for Arbitrary-Footprint Robots from Point Clouds via Path Integral Control",
+      "abstract": "Ground robots often carry payloads, implements, or other attachments that turn their effective footprint into complex, non-convex shapes. Navigating safely through clutter then requires reasoning about this true geometry, yet most local planners simplify it with convex or inflated proxies and rasterize sensor data into occupancy grids or distance fields. Both choices eliminate feasible motions when clearance is comparable to the footprint geometry. We present EXACT-MPPI, a training-free local navigation framework that maps local point-cloud observations and sparse guidance directly to motion commands, without any intermediate map representation. The framework embeds an analytic, exact signed-distance evaluator into a Model Predictive Path Integral (MPPI) controller. The footprint is represented as a simple polygon for general convex or concave planar shapes, with a rectangle-cover specialization for faster evaluation of rectilinear footprints, enabling footprint-aware collision costs without convex decomposition, inflation, or learned encoders. During each MPPI rollout, observed obstacle points are transformed into the predicted body frame and evaluated against the footprint. All operations are batched in JAX, leveraging GPU parallelism for real-time receding-horizon control. Experiments show that EXACT-MPPI accelerates batched distance evaluation over a learned point-to-robot baseline, preserves feasible motion where convex-footprint planners fail, and remains robust under dense static and moving obstacles. The same framework deploys on differential-drive, Ackermann, omnidirectional, and hybrid-mode platforms by changing only the footprint description and motion model without per-platform training. Pairing exact footprint geometry with sampling-based predictive control thus offers a practical, training-free path to footprint-aware local navigation across diverse robots.",
+      "venue": "",
+      "year": 2026,
+      "date": "2026-05-28",
+      "link": "https://arxiv.org/abs/2605.29663",
+      "code": "",
+      "notes": "",
+      "authors": "Chen Peng, Zhikang Ge, Wenwu Lu, Haiming Gao, Stavros Vougioukas et al.",
+      "tags": {
+        "topic": "Agent in Physical World",
+        "category": "Method",
+        "modality": "Multimodal"
+      }
+    },
+    {
+      "id": "vlaconf-calibrated-task-success-confidence-for-vision-language-action-models",
+      "arxiv_id": "2605.29605",
+      "title": "VLAConf: Calibrated Task-Success Confidence for Vision-Language-Action Models",
+      "abstract": "Confidence estimation for Vision-Language-Action (VLA) models is essential for robots to perform manipulation tasks in the open world, providing crucial signals for risk-sensitive decision-making and failure anticipation. Existing confidence estimation methods typically rely on ensemble-based paradigms or action-token probabilities to predict the likelihood of task success. However, they still encounter challenges in computational efficiency and cross-architecture generalizability. These methods usually require repeated sampling, leading to inference inefficiency, and are restricted to VLA models with discrete action outputs, making them difficult to apply to continuous action spaces. To address this issue, we propose VLAConf, a one-class discriminative confidence framework. By leveraging frozen pretrained VLA internal representations, VLAConf directly estimates step-wise anomaly scores in a single forward pass using a lightweight confidence head, thereby eliminating the overhead of exhaustive resampling. We additionally use step-conditioned modeling to encode rollout-phase information along the manipulation trajectory. Experiments on the LIBERO benchmark demonstrate that VLAConf significantly improves the quality of the confidence signal constructed for post-hoc calibration, outperforming existing baselines by a large margin in inference efficiency. The effectiveness of VLAConf is further validated in real-robot experiments. To access the source code and supplementary videos, visit https://sites.google.com/view/vlaconf.",
+      "venue": "",
+      "year": 2026,
+      "date": "2026-05-28",
+      "link": "https://arxiv.org/abs/2605.29605",
+      "code": "",
+      "notes": "",
+      "authors": "Dehao Huang, Aoxiang Gu, Chengjie Zhang, Bolin Zou, Wenlong Dong et al.",
+      "tags": {
+        "topic": "Agent in Physical World",
+        "category": "Method",
+        "modality": "Multimodal"
+      }
+    },
+    {
+      "id": "ve2vf-vision-enabled-to-vision-free-distillation-via-real-world-reinforcement-le",
+      "arxiv_id": "2605.29564",
+      "title": "VE2VF: Vision-Enabled to Vision-Free Distillation via Real-world Reinforcement Learning for Robust Contact-Rich Manipulation",
+      "abstract": "When using reinforcement learning (RL) for contact-rich robotic manipulation, vision can provide task-relevant information that accelerates learning beyond what proprioception alone can achieve. However, vision-enabled policies tend to overfit to the visual conditions seen during training, limiting their robustness and transferability. We present a human-in-the-loop RL framework that employs teacher-student distillation to achieve robust performance across multiple task variants, trained entirely in the real world without requiring domain randomization or data augmentation. A vision-enabled teacher distills its knowledge into a vision-free student that relies solely on pose, twist, and wrench sensing, combining fast training with strong task generalization. On the real-world NIST assembly benchmark board, our approach achieves 95\\% overall success after approximately 50 minutes of training on 3 representative tasks, including robust generalization to 8 unseen task variants. Fine-tuning with distillation achieves full success on the most challenging task. We demonstrate that the resulting policies outperform baselines in both robustness and adaptability.",
+      "venue": "",
+      "year": 2026,
+      "date": "2026-05-28",
+      "link": "https://arxiv.org/abs/2605.29564",
+      "code": "",
+      "notes": "",
+      "authors": "Victor Kowalski, Chengxi Li, Dongheui Lee",
+      "tags": {
+        "topic": "Agent in Physical World",
+        "category": "Method",
+        "modality": "Multimodal"
+      }
+    },
+    {
+      "id": "elegantvla-learning-when-to-think-for-efficient-vision-language-action-models",
+      "arxiv_id": "2605.29438",
+      "title": "ElegantVLA: Learning When to Think for Efficient Vision-Language-Action Models",
+      "abstract": "Vision-Language-Action (VLA) models are a powerful paradigm for generalist robotic control. However, their high computational cost and limited control frequency hinder real-time robotic manipulation, especially when large vision-language backbones and iterative action heads run at every control step. Existing VLA acceleration methods often optimize individual components or rely on fixed acceleration rules, treating different control steps with largely fixed computation and overlooking the non-uniform reasoning demands of sequential embodied control. Inspired by human motor control, where cognitive and feedback resources concentrate on goal-sensitive stages, we argue that VLA models should learn when to invest full computation and when to reuse prior computation. We propose ElegantVLA, a plug-in phase-adaptive inference framework that accelerates VLA models through intra-model dynamic compute scheduling. ElegantVLA introduces a lightweight scheduler that observes temporal representation similarity, robot-motion cues, and episode progress to jointly allocate computation across the vision encoder, LLM, and action head. For perception-language reasoning, the scheduler selects a five-level Vision-LLM compute mode, from full recomputation to multi-step temporal reuse, based on visual-language representation stability. For action generation, it selects a three-level denoising mode, reusing intermediate denoising states during stable motion while preserving full refinement for goal-sensitive stages. By coordinating these decisions, ElegantVLA offers a general acceleration framework for modern VLA pipelines with explicit action-generation modules, without modifying or retraining the base model. Experiments on GR00T and CogACT achieve up to 2.55x and 3.77x speedup, and on six real-world GR00T tasks ElegantVLA cuts computation by 2.18x while raising control frequency from 13.8 Hz to 26.3 Hz.",
+      "venue": "",
+      "year": 2026,
+      "date": "2026-05-28",
+      "link": "https://arxiv.org/abs/2605.29438",
+      "code": "",
+      "notes": "",
+      "authors": "Ye Li, Huanan Liu, Kangye Ji, Yuan Meng, Jiajun Fan et al.",
+      "tags": {
+        "topic": "Agent in Physical World",
+        "category": "Method",
+        "modality": "Multimodal"
+      }
+    },
+    {
+      "id": "3dvla-enhancing-vision-language-action-models-via-3d-spatial-and-instance-unders",
+      "arxiv_id": "2605.29416",
+      "title": "3DVLA: Enhancing Vision-Language-Action Models via 3D Spatial and Instance Understanding",
+      "abstract": "Vision-Language-Action models have achieved remarkable progress in robotic manipulation, yet they suffer from a critical limitation: a lack of 3D scene understanding. This deficiency manifests as three intertwined challenges: weak extraction of 3D spatial positions without enforcing multi-view consistency, inadequate 3D instance understanding, and fragile reasoning under occlusion. Although mature 3D perception methods exist, their direct integration into VLA pipelines is hindered by architectural incompatibility and by heavy reliance on costly instance-level annotations. To address the above challenges, we propose 3DVLA, a plug-and-play framework that injects robust 3D reasoning into pretrained VLAs without requiring extra manual labels or discarding VLM priors. Specifically, 3DVLA tackles the three challenges through: (1) pervasive 3D feature encoding with explicit multi-view consistency constraints across all modalities and a Spatially-Conditioned Geometry Aggregation method, (2) an instance estimation module with high-level instance tokens for 3D instance awareness, and (3) a masked self-supervised 3D encoding branch that retains its predictor for visual token completion to handle occlusions. We integrate 3DVLA with multiple VLA baselines and evaluate on LIBERO-Plus and RoboTwin 2.0. Results show consistent and significant gains in manipulation performance, validating both the effectiveness and plug-and-play compatibility of our approach.",
+      "venue": "",
+      "year": 2026,
+      "date": "2026-05-28",
+      "link": "https://arxiv.org/abs/2605.29416",
+      "code": "",
+      "notes": "",
+      "authors": "Zhongyu Xia, Yousen Tang, Bingqing Wei, Yongtao Wang",
+      "tags": {
+        "topic": "Agent in Physical World",
+        "category": "Method",
+        "modality": "Multimodal"
+      }
+    },
+    {
+      "id": "phase-conditioned-imitation-learning-with-autonomous-failure-recovery-for-robust",
+      "arxiv_id": "2605.29407",
+      "title": "Phase-Conditioned Imitation Learning with Autonomous Failure Recovery for Robust Deformable Object Manipulation",
+      "abstract": "This paper presents a phase-conditioned, force-aware framework for robust deformable object manipulation. Standard imitation learning policies such as Action Chunking with Transformers (ACT) rely on a Markovian assumption at inference, causing state aliasing when visually similar observations require contradictory actions and preventing autonomous recovery from execution failures. We address this with a closed-loop hierarchical architecture. A FiLM-conditioned ACT encoder modulates feature extraction based on the current task phase, enabling a single unified policy to produce phase-specific behaviors while sharing action dynamics across phases. A multi-modal phase predictor fusing visual, force, and pose feedback estimates the phase in real time, detecting contact failures that are invisible to vision alone and autonomously triggering recovery trajectories. The system is completed by a hybrid impedance controller for compliant execution and a haptic teleoperation interface for force-aware data collection. Ablation studies show that FiLM-based modulation significantly outperforms both unconditioned and token-level conditioned baselines, and t-SNE analysis confirms that FiLM induces well-separated, phase-specific feature representations. Validated on hanging and removing a T-shirt with dual arms, the closed-loop system improves the hanging success rate from 56\\% to 87\\% through autonomous error recovery. Code and videos: https://leledeyuan00.github.io/phaser/",
+      "venue": "",
+      "year": 2026,
+      "date": "2026-05-28",
+      "link": "https://arxiv.org/abs/2605.29407",
+      "code": "",
+      "notes": "",
+      "authors": "Dayuan Chen, Kai Tang, Yukuan Zhang, Kazuhiro Kosuge, Yasuhisa Hirata",
+      "tags": {
+        "topic": "Agent in Physical World",
+        "category": "Method",
+        "modality": "Multimodal"
+      }
     }
   ]
 }
