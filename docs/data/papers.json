@@ -103950,6 +103950,470 @@
         "category": "Method",
         "modality": "Multimodal"
       }
+    },
+    {
+      "id": "benchmark-everything-everywhere-all-at-once",
+      "arxiv_id": "2606.06462",
+      "title": "Benchmark Everything Everywhere All at Once",
+      "abstract": "Benchmarks are fundamental for evaluating and advancing LLMs and MLLMs by providing standardized and explicit measures of performance. However, their construction is labor-intensive and hard to reuse, raising concerns about sustainability and scalability. Moreover, existing benchmarks often quickly reach performance saturation after their release, resulting in insufficient discrimination among state-of-the-art models. To address these challenges, we introduce Benchmark Agent, a fully autonomous agentic system designed for benchmark building. Our framework orchestrates the complete benchmark construction pipeline, from user query analysis and subtask design to data annotation and quality control. To assess Benchmark Agent, we implement it to produce 15 representative benchmarks, spanning diverse evaluation scenarios, including text understanding, multimodal understanding, and domain-specific reasoning. Extensive experiments, including human evaluation, LLM-as-a-judge assessment, and consistency checks, demonstrate Benchmark Agent can generate high-quality benchmark samples with minimal human involvement. More importantly, through continual evaluation, we observe several insightful findings, including that current models struggle with certain domain-specific reasoning tasks. We believe that rapidly evolving benchmarks can contribute significantly to the research community. The preview and code will be publicly available at the demo page and code repository.",
+      "venue": "",
+      "year": 2026,
+      "date": "2026-06-04",
+      "link": "https://arxiv.org/abs/2606.06462",
+      "code": "",
+      "notes": "",
+      "authors": "Shiyun Xiong, Dongming Wu, Peiwen Sun, Yuang Ai, Bokang Yang et al.",
+      "tags": {
+        "topic": "Agent in Digital World",
+        "category": "Method",
+        "modality": "Multimodal"
+      }
+    },
+    {
+      "id": "subspace-aware-sparse-autoencoders-for-effective-mechanistic-interpretability",
+      "arxiv_id": "2606.06333",
+      "title": "Subspace-Aware Sparse Autoencoders for Effective Mechanistic Interpretability",
+      "abstract": "Sparse Autoencoders (SAEs) are widely used for mechanistic interpretability in large language models, yet their formulation assigns each latent feature a single decoder direction, implicitly assuming features to be one-dimensional. We show that this assumption mismatches with the multi-dimensional structure of model features, provably inducing feature splitting through two distinct mechanisms. Geometrically, reconstructing a feature of intrinsic dimension $d_i \\ge 2$ to error $\\varepsilon$ with single-direction decoders forces a number of atoms that is exponential in $d_i$. From an end-to-end optimization perspective, this splitting is not merely possible but actively preferred. We prove that there exists a continuous path from the true $d_i$-dimensional basis to a strictly lower risk of the $\\ell_1$-regularized SAE objective, whose descent directions drive any trained dictionary into that exponential regime. A single coherent feature is therefore fragmented across many near-collinear latents, producing spurious multiplicity and obscuring the intrinsic geometry. Motivated by this, we introduce Subspace-Aware Sparse Autoencoders (SASA), which replace single-vector decoders with learned decoder subspaces, enforce block sparsity via Top-$s$ group gating, and adapt each group's effective rank with a nuclear-norm regularizer. We then show that once the block size satisfies $r \\ge d_i$, a single group not only can represent the entire feature slice but is the global minimizer of the SASA objective. This consolidation yields a sample complexity polynomial in $d_i$ rather than exponential -- a decisive advantage given that every training activation costs an LLM forward pass. Empirically, on GPT-2 and Mistral-7B, SASA reduces feature splitting and absorption, improves monosemanticity and interpretability, and matches or exceeds standard SAEs while training on roughly half the token budget.",
+      "venue": "",
+      "year": 2026,
+      "date": "2026-06-04",
+      "link": "https://arxiv.org/abs/2606.06333",
+      "code": "",
+      "notes": "",
+      "authors": "Seyed Arshan Dalili, Mehrdad Mahdavi",
+      "tags": {
+        "topic": "LLM Reasoning & Planning",
+        "category": "Method",
+        "modality": "Text"
+      }
+    },
+    {
+      "id": "onereason-technical-report",
+      "arxiv_id": "2606.06260",
+      "title": "OneReason Technical Report",
+      "abstract": "Generative recommendation models in the OneRec family have been widely deployed in many real-world services, such as short-video, live-streaming, advertising, and e-commerce. However, these generative models can only benefit from the scaling advantage, while their reasoning ability is hard to activate, since we cannot construct meaningful Chain-of-Thought (CoT) sequences consisting of itemic tokens only. Inspired by the success of the reasoning-style ``think before answer'' paradigm in the LLM field, we conduct preliminary studies (i.e., OneRec-Think, OpenOneRec) to explore reasoning capability in generative recommendation. Nevertheless, we notice an unexpected phenomenon: the thinking mode does not show advantages over the non-thinking mode. Drawing insights from recent findings on CoT robustness in multi-modal language models, we argue that effective reasoning in recommendation rests on two factors: perception, the ability to ground itemic tokens in their underlying language semantics, and cognition, the ability to reorganize a user's behavior sequence into coherent latent interest points. We therefore propose OneReason, which includes: (1) strong itemic token perception in pre-training, (2) a three-level cognition-enhanced CoT format for recommendation tasks in SFT, and (3) a specialize-then-unify training recipe in RL to enhance the thinking ability.",
+      "venue": "",
+      "year": 2026,
+      "date": "2026-06-04",
+      "link": "https://arxiv.org/abs/2606.06260",
+      "code": "",
+      "notes": "",
+      "authors": " OneRec Team, Biao Yang, Boyang Ding, Chenglong Chu, Dunju Zang et al.",
+      "tags": {
+        "topic": "LLM Reasoning & Planning",
+        "category": "Method",
+        "modality": "Text"
+      }
+    },
+    {
+      "id": "design-a-reliable-llm-integrated-interface-for-mortality-forecasting",
+      "arxiv_id": "2606.06235",
+      "title": "Design a Reliable LLM-Integrated Interface for Mortality Forecasting",
+      "abstract": "Mortality forecasting plays an important role in actuarial and policy decision-making, but its implementation remains technically complex and inaccessible to non-expert users. This project proposes a reliable large language model (LLM)-integrated interface that improves usability while maintaining statistical power. The LLM is designed as a constrained orchestration layer that translates natural-language inputs into structured configurations for a deterministic forecasting pipeline. A three-phase methodology is employed to ensure accuracy, usability, and transparency. First, a baseline pipeline is implemented using the CoMoMo package, reproducing established mortality forecasting results. Second, the pipeline is extended to generate multi-step forecasts using rolling-origin evaluation and mean squared error (MSE). Third, a prototype interface uses a local LLM to handle users' forecasting requests in plain language. The system demonstrates that LLMs can enhance accessibility without compromising reproducibility, transparency, or actuarial validity in high-stakes analytical workflows.",
+      "venue": "",
+      "year": 2026,
+      "date": "2026-06-04",
+      "link": "https://arxiv.org/abs/2606.06235",
+      "code": "",
+      "notes": "",
+      "authors": "Thi Kim Ngan Nguyen",
+      "tags": {
+        "topic": "AI for Science",
+        "category": "Method",
+        "modality": "Text"
+      }
+    },
+    {
+      "id": "unsupervised-pattern-analysis-in-japanese-veterinary-toxicology-a-regulatory-com",
+      "arxiv_id": "2606.06207",
+      "title": "Unsupervised Pattern Analysis in Japanese Veterinary Toxicology: A Regulatory-Compliant Framework for Cross-Species Risk Assessment",
+      "abstract": "Veterinary pharmacovigilance systems are essential for monitoring adverse drug events (ADEs), yet existing approaches often fail to capture region-specific toxicity patterns shaped by local biological and regulatory contexts. In Japan, these challenges are amplified by species-specific metabolic differences and reporting practices defined by the Ministry of Agriculture, Forestry, and Fisheries (MAFF). Most prior work relies on prediction-oriented models, limiting mechanistic interpretability. This study proposes a regulatory-integrated unsupervised framework for pattern discovery using the National Veterinary Assay Laboratory (NVAL) database. ADEs are encoded into organ system-aligned representations and adjusted for species-specific reporting biases, enabling cross-species comparison. Similarity-based clustering and dimensionality reduction are applied to identify latent toxicity structures. Analysis of 4,120 high-confidence ADE reports (9,080 drug-ADE combinations) identified three significant species clusters (p < 0.01), including hepatic-dominant patterns in companion animals (0.42 $\\pm$ 0.06), renal toxicity in ruminants (0.39 $\\pm$ 0.07), and dermatological sensitivity in sheep (0.35 $\\pm$ 0.07). Drug-level clustering achieved 83% alignment with pharmacological classes, while cosine similarity outperformed alternative metrics (silhouette score: 0.48; cluster precision: 87%). Regulatory validation showed strong agreement with established classifications. These findings demonstrate that regulation-aligned unsupervised analysis can uncover biologically meaningful, region-specific toxicity patterns, providing an interpretable and scalable framework for veterinary drug safety assessment.",
+      "venue": "",
+      "year": 2026,
+      "date": "2026-06-04",
+      "link": "https://arxiv.org/abs/2606.06207",
+      "code": "",
+      "notes": "",
+      "authors": "Yukiko Kawakami, Mohammad Shirazi, Ryo Shimizuwa, Saito Shinoda, Alireza Mortazavi et al.",
+      "tags": {
+        "topic": "AI for Science",
+        "category": "Method",
+        "modality": "Text"
+      }
+    },
+    {
+      "id": "step-adaptive-multimodal-fusion-network-with-multi-scale-cloud-feature-learning-",
+      "arxiv_id": "2606.06102",
+      "title": "Step-adaptive multimodal fusion network with multi-scale cloud feature learning for ultra-short-term solar irradiance forecasting",
+      "abstract": "Ultra-short-term solar irradiance prediction is critical for photovoltaic system dispatch and power grid stability. Existing approaches suffer from three key shortcomings: single time-series models cannot capture the spatial dynamics of clouds under complex conditions, standard convolutions inadequately represent multi-scale cloud features, and fixed low-frequency compensation strategies fail to adapt to different prediction steps. To address these issues, this proposes a multi-source data fusion model for ultra-short-term irradiance prediction. The model first employs InceptionNeXt to extract multi-scale, multi-directional spatial features from ground-based cloud images. A step-adaptive low-frequency compensation unit is then introduced to dynamically modulate global low-frequency information based on the prediction step. Eventually, the enhanced image features are combined with meteorological time-series features, and a TempAttnLSTM network captures global temporal dependencies for multi-step prediction. Experiments on the public NREL dataset and practical photovoltaic stations in Shandong illustrate the effectiveness of the proposed method compared with several state-of-the-art approaches.",
+      "venue": "",
+      "year": 2026,
+      "date": "2026-06-04",
+      "link": "https://arxiv.org/abs/2606.06102",
+      "code": "",
+      "notes": "",
+      "authors": "Jingxin Zhang Xiaoqin Wang",
+      "tags": {
+        "topic": "AI for Science",
+        "category": "Method",
+        "modality": "Multimodal"
+      }
+    },
+    {
+      "id": "reducing-hallucinations-in-complex-question-answering-using-simple-graph-based-r",
+      "arxiv_id": "2606.05901",
+      "title": "Reducing Hallucinations in Complex Question Answering using Simple Graph-based Retrieval-Augmented Generation (long version)",
+      "abstract": "Large language models (LLMs) have fundamentally transformed the landscape of Natural Language Processing. Despite these advances, LLMs and LLM-based systems remain prone to a variety of failure modes. Retrieval-augmented generation (RAG) systems have emerged as a common deployment scenario seeking to both avoid the well known risk of the LLM \"hallucinating\" information, and to enable reasoning and question answering over proprietary information that the LLM did not have access to during training without resorting to expensive model fine-tuning.\n  In this work, we explore the idea of using a lightweight graph structure with a relatively simple graph schema, to support the RAG subsystem via a dedicated toolset. We design an agentic system with a variety of vector search and graph query tools operating over a structured dataset based on a curated subset of English Wikipedia articles, and evaluate its performance on questions from MoNaCo, a challenging Wikipedia QA benchmark of complex query answering tasks.\n  Our results show that the introduction of graph-based tools can significantly increase the precision and recall of factual correctness, can halve the number of hallucinated answers, and achieves the highest fine-grained truthfulness score among the three evaluated scenarios. All this with a modest increase in token usage.",
+      "venue": "",
+      "year": 2026,
+      "date": "2026-06-04",
+      "link": "https://arxiv.org/abs/2606.05901",
+      "code": "",
+      "notes": "",
+      "authors": "Christopher J. Wedge, Joshua Stutter, Danny Dixon, Jacek Cała",
+      "tags": {
+        "topic": "LLM Reasoning & Planning",
+        "category": "Method",
+        "modality": "Text"
+      }
+    },
+    {
+      "id": "staying-with-the-uncertainty-uncertainty-scaffolding-strategies-for-artificial-m",
+      "arxiv_id": "2606.05890",
+      "title": "Staying with the Uncertainty: Uncertainty-Scaffolding Strategies for Artificial Moral Advisors in LLM-to-LLM Simulated Conversations",
+      "abstract": "LLMs are increasingly deployed as Artificial Moral Advisors (AMA) in a variety of contexts: what kind of conversational patterns should they display? In this paper, we study how AMA can help their interlocutors \"stay with the uncertainty\". We propose three modes of uncertainty (Perspective-Multiplying, Tension-Preserving, Process-Reflecting) and compare them against three control conditions (Baseline, Persuasive, Sycophantic). A user-agent LLM engages in a dialogue on an ethical dilemma with an AMA following a specific uncertainty strategy, and completes pre- and post-conversation questionnaires. We further examine the effect of two persona prompt formats (Declarative and Narrative). We found that (1) no single model dominates as a simulated user agent, with open models aligning with human ambiguity through between-persona divergence and closed models through within-persona hedging; (2) declarative personas better capture initial stance diversity while narrative personas show more realistic belief revision; (3) all six AMA strategies produce distinguishable conversational patterns; and (4) uncertainty strategies differ not in how much stance revision they produce, but in the quality of engagement they sustain.",
+      "venue": "",
+      "year": 2026,
+      "date": "2026-06-04",
+      "link": "https://arxiv.org/abs/2606.05890",
+      "code": "",
+      "notes": "",
+      "authors": "Salvatore Greco, Hainiu Xu, Jacopo Domenicucci, Yulan He, Sylvie Delacroix",
+      "tags": {
+        "topic": "Agent in Digital World",
+        "category": "Method",
+        "modality": "Text"
+      }
+    },
+    {
+      "id": "mechanistic-insights-into-functional-sparsity-in-multimodal-llms-via-core-heads",
+      "arxiv_id": "2606.05843",
+      "title": "Mechanistic Insights into Functional Sparsity in Multimodal LLMs via CoRe Heads",
+      "abstract": "While Multimodal Large Language Models (MLLMs) demonstrate remarkable proficiency on complex vision-language tasks, the mechanisms by which they extract query-relevant visual features from complex, noisy contexts remain opaque. In this paper, we present an in-depth interpretability study that uncovers a profound structural property within MLLMs: functional sparsity in cross-modal retrieval. Leveraging a token-level metric termed Retrieval Attention Mass (RAM), we identify and characterize a highly specialized subset of attention heads, referred to as Context-aware Retrieval (CoRe) heads. Across diverse visual domains and model scales, we observe a clear functional division: CoRe heads act as dedicated information extractors, while most other heads distribute attention over broader contextual regions. Causal interventions further demonstrate the necessity of these specialized heads. Ablating only the top 5% of CoRe heads causes significant degradation in multimodal reasoning performance, whereas ablating lower-ranked heads has minimal effect. Moreover, acceleration experiments validate the utility of CoRe heads, showing that leveraging this localized sparsity significantly accelerates inference while maintaining robust task performance. Our findings reveal a structural principle of functional sparsity within MLLMs, refining the current understanding of mechanistic interpretability and laying a theoretical foundation that can inspire future architecture design and model optimization.",
+      "venue": "",
+      "year": 2026,
+      "date": "2026-06-04",
+      "link": "https://arxiv.org/abs/2606.05843",
+      "code": "",
+      "notes": "",
+      "authors": "Ruoxi Sun, Quantong Qiu, Juntao Li, Zecheng Tang, Yihang Lou et al.",
+      "tags": {
+        "topic": "MLLM Reasoning & Planning",
+        "category": "Method",
+        "modality": "Multimodal"
+      }
+    },
+    {
+      "id": "drift-a-residual-flow-adapter-for-decoding-continuous-outputs-in-vision-language",
+      "arxiv_id": "2606.05758",
+      "title": "DRIFT: A Residual Flow Adapter for Decoding Continuous Outputs in Vision-Language Models",
+      "abstract": "Many modern vision-language models (VLMs) build on autoregressive decoding of discrete tokens. While text-based output interfaces enable scalable pretraining and strong zero-shot generalization across diverse tasks, they are poorly suited for problems that require precise continuous outputs, such as localizing temporal boundaries of events or generating robotic control actions. To address this challenge, we propose DRIFT, a general framework for adapting pretrained VLMs to continuous decoding tasks. DRIFT combines a base predictor, which provides a coarse estimate of the target output, with a generative refinement module based on flow matching that iteratively improves the prediction. This residual formulation transforms the generative modeling problem from learning a global output distribution to modeling a localized residual distribution around a strong prior, substantially simplifying optimization. We evaluate DRIFT on both perception and planning tasks, including visual grounding and robotic control. Across multiple tasks and architectures spanning MLLMs, VLAs, and WAMs, DRIFT consistently outperforms a strong set of regression- and generative-based solutions.",
+      "venue": "",
+      "year": 2026,
+      "date": "2026-06-04",
+      "link": "https://arxiv.org/abs/2606.05758",
+      "code": "",
+      "notes": "",
+      "authors": "Zhuoming Liu, Jinhong Lin, Kwan Man Cheng, Lin Zhang, Shayok Bagchi et al.",
+      "tags": {
+        "topic": "MLLM Reasoning & Planning",
+        "category": "Method",
+        "modality": "Multimodal"
+      }
+    },
+    {
+      "id": "scaffold-not-vocabulary-a-controlled-two-tier-pre-registered-study-of-a-popperia",
+      "arxiv_id": "2606.06454",
+      "title": "Scaffold, Not Vocabulary? A Controlled, Two-Tier, Pre-Registered Study of a Popperian Code-Generation Skill",
+      "abstract": "Large language models increasingly write, review, and judge code, and a fast-growing practice equips them with prompt 'skills' that ask the model to reason like a scientist. A prominent example tells the model to act as a Popperian falsificationist, and such skills are reported to improve generated code. But these gains are almost always read off an LLM-as-a-judge, an instrument with documented positional, self-preference, and stylistic biases. We ask: if it appears to help, is the gain from the skill's Popperian content, or from the structure any scaffold imposes? We pre-register a two-tier ablation with three controls: a length-matched placebo, a labels-only scaffold that keeps the Popperian headers but strips the procedure, and an execution oracle (HumanEval+ unit tests), plus a vocabulary-halo sentinel and a same-model self-judge audit. On a frontier model (Claude Sonnet 4.6, N=163) all conditions sit near the benchmark ceiling and do not separate, so the pre-registered +5-point improvement is not supported (a ceiling-limited non-detection). On a small model (Qwen2.5-Coder-0.5B, N=164) structured arms lift best-of-eight correctness by 20-22 points, but the full skill shows no separable benefit over a labels-only scaffold (aggregate F@8=L@8 vs V@8=34.8%), and the placebo trails by only 2.4 points. A 0.5B self-judge applying the Popperian rubric does not beat random selection and concentrates 60% of its picks on one index. In the two settings tested, the skill's Popperian procedural content adds no separable execution-correctness benefit beyond a labels-only scaffold, so the gains track scaffold structure. We contribute a calibrated negative result and a reusable disambiguation protocol; the finding bounds an engineering claim about one prompt-skill family and is not an evaluation of Popperian methodology in general.",
+      "venue": "",
+      "year": 2026,
+      "date": "2026-06-04",
+      "link": "https://arxiv.org/abs/2606.06454",
+      "code": "",
+      "notes": "",
+      "authors": "Mehmet Iscan",
+      "tags": {
+        "topic": "LLM Reasoning & Planning",
+        "category": "Method",
+        "modality": "Text"
+      }
+    },
+    {
+      "id": "from-self-to-other-evaluating-demographic-perspective-taking-in-llm-hate-speech-",
+      "arxiv_id": "2606.06266",
+      "title": "From Self to Other: Evaluating Demographic Perspective-Taking in LLM Hate Speech Annotation",
+      "abstract": "Hate speech detection is inherently subjective: people from different demographic groups perceive the same content very differently. Collecting enough annotations from multiple demographic groups is costly and difficult to scale. Persona-conditioned Large Language Models (models prompted to adopt a specific demographic identity) have been proposed as a way to simulate diverse perspectives at scale. But do they actually reflect how different groups disagree? We evaluate three aspects of human social judgement: (i) whether personas from different groups disagree in human-like ways (inter-group disagreement), (ii) whether they become more sensitive when content targets their own identity (in-group sensitivity), and (iii) whether they can accurately predict how another group would react (vicarious prediction). Our results show that no model consistently captures all three dimensions, and performance is highly model-dependent and does not emerge reliably from minimal identity prompts alone. However, vicarious prompting with Llama 3.1 yields the highest cross-group agreement in most demographic axes and provides the closest overall approximation to human disagreement patterns, indicating that this configuration may provide a more reliable setting for automatic annotation aligned with human judgements.",
+      "venue": "",
+      "year": 2026,
+      "date": "2026-06-04",
+      "link": "https://arxiv.org/abs/2606.06266",
+      "code": "",
+      "notes": "",
+      "authors": "Paloma Piot, Javier Parapar",
+      "tags": {
+        "topic": "LLM Reasoning & Planning",
+        "category": "Benchmark",
+        "modality": "Text"
+      }
+    },
+    {
+      "id": "ir3de-a-linear-router-for-large-language-models",
+      "arxiv_id": "2606.06098",
+      "title": "IR3DE: A Linear Router for Large Language Models",
+      "abstract": "Foundational Large Language Models (LLMs) demonstrate proficiency on a wide range of general tasks, and achieve remarkable results on various specialized tasks via domain-expert LLMs. With the ever-growing list of available LLMs, inference routers are being proposed to select the most appropriate LLM for each prompt. However, existing routing methods either optimize cost across weak-to-strong generalist LLMs or require substantial training to support domain-expertise routing. In this paper, we propose IR3DE, a Ridge Regression-based Router for Domain Experts that provides cheap and fast routing decisions for each prompt. We evaluate IR3DE in two Causal Language Modeling (CLM) settings where the tasks are next-token prediction for all domains, and one reasoning setting where each domain has its own distinct reasoning task. Despite being a linear router, IR3DE achieves performance comparable to the other baselines in both CLM settings, and surpassing them in the reasoning setting, with a normalized performance of 98.4%. Moreover, IR3DE enables the addition or removal of new domain experts without requiring the router to be retrained from scratch, allowing a dynamic set of LLMs to be served with minimal disruption to the router itself. Our code is available at: github.com/gensyn-ai/IR3DE.",
+      "venue": "the ICML 2026",
+      "year": 2026,
+      "date": "2026-06-04",
+      "link": "https://arxiv.org/abs/2606.06098",
+      "code": "",
+      "notes": "",
+      "authors": "Eros Fanì, Oğuzhan Ersoy",
+      "tags": {
+        "topic": "LLM Reasoning & Planning",
+        "category": "Method",
+        "modality": "Text"
+      }
+    },
+    {
+      "id": "beyond-alignment-value-diversity-as-a-collective-property-in-multicultural-agent",
+      "arxiv_id": "2606.05985",
+      "title": "Beyond Alignment: Value Diversity as a Collective Property in Multicultural Agent Systems",
+      "abstract": "Multicultural multi-agent systems are increasingly deployed in globally diverse settings, where different agents are grounded in different cultural backgrounds. Existing cultural evaluation focuses on value alignment: how closely a single agent matches a target culture. Yet alignment is a per-agent property and cannot reveal whether a system, taken as a whole, preserves the cultural plurality it is meant to represent. We propose value diversity as a system-level evaluation axis for multicultural agent systems, defined through the dissimilarity between culturally conditioned agents' responses on a shared value survey. Using the World Values Survey, we evaluate 19 cultures and 18 backbone models across a wide range of system configurations. We find that diversity is largely uncorrelated with alignment, indicating that the two capture complementary system properties, and that current multicultural agent systems fall substantially below human societies in value diversity. Mixed-backbone systems narrow this gap but do not close it, and the gap persists across culture compositions and agent scales. Social interaction further erodes diversity by driving agents toward consensus, and a participatory budgeting case study shows that this homogenization narrows the breadth of collective decision-making. Together, our results establish value diversity as a distinct evaluation axis for multicultural multi-agent systems and reveal a persistent homogenization tendency in current LLM-based societies. Our code and data are publicly available at https://github.com/iNLP-Lab/MultiAgent-Diversity.",
+      "venue": "",
+      "year": 2026,
+      "date": "2026-06-04",
+      "link": "https://arxiv.org/abs/2606.05985",
+      "code": "https://github.com/iNLP-Lab/MultiAgent-Diversity",
+      "notes": "",
+      "authors": "Shaoyang Xu, Jingshen Zhang, Long P. Hoang, Jinyuan Li, Wenxuan Zhang",
+      "tags": {
+        "topic": "Agent in Digital World",
+        "category": "Method",
+        "modality": "Text"
+      }
+    },
+    {
+      "id": "ace-sql-adaptive-co-optimization-via-empirical-credit-assignment-for-text-to-sql",
+      "arxiv_id": "2606.05906",
+      "title": "ACE-SQL: Adaptive Co-Optimization via Empirical Credit Assignment for Text-to-SQL",
+      "abstract": "Text-to-SQL maps natural language questions to executable SQL queries. Modern databases often contain large and complex schemas, making schema linking a critical step for accurate SQL generation. Existing methods either rely on full-schema generation, which leaves schema linking implicit within a large search space, or use a separate retriever trained with static gold-column supervision, whose targets may be suboptimal for the current generator policy. To address this issue, we propose Adaptive Co-optimization via Empirical Credit Assignment for Text-to-SQL (ACE-SQL), a reinforcement learning (RL) framework that jointly optimizes schema retrieval and SQL generation under execution feedback. ACE-SQL constructs an online column-set pool from generator rollouts and derives adaptive on-policy retrieval targets from the column set most frequently associated with execution-correct rollouts. This induces bidirectional adaptation, where the retriever adapts toward column sets that the generator can execute correctly, while the generator adapts to the retriever's evolving schema selections under execution feedback. With approximately 3k synthetic Text-to-SQL question-database pairs for RL training, ACE-SQL achieves 65.3% greedy execution accuracy on BIRD Dev while using 0.93k output tokens per query. The repository is available at https://github.com/xbchen1/ACE-SQL.",
+      "venue": "",
+      "year": 2026,
+      "date": "2026-06-04",
+      "link": "https://arxiv.org/abs/2606.05906",
+      "code": "https://github.com/xbchen1/ACE-SQL",
+      "notes": "",
+      "authors": "Xiaobing Chen, Ai Jian, Eryu Guo, Zhiqi Pang",
+      "tags": {
+        "topic": "LLM Reasoning & Planning",
+        "category": "Method",
+        "modality": "Text"
+      }
+    },
+    {
+      "id": "a-vision-language-framework-for-comparative-reasoning-in-radiology",
+      "arxiv_id": "2606.06407",
+      "title": "A Vision-language Framework for Comparative Reasoning in Radiology",
+      "abstract": "Medical imaging artificial intelligence has achieved strong performance in isolated image interpretation, but remains poorly aligned with radiological practice, where diagnosis and follow-up rely on comparison across prior studies and analogous reference cases. Here we formulate radiological comparison as an entity-aware cross-image reasoning problem and introduce a framework that supports both reference-case retrieval and temporal comparative interpretation. We construct MedReCo-DB, a large-scale comparative imaging resource derived from routine image-report pairs, comprising more than 690,000 images from over 160,000 patients across eight institutions, four countries and seven imaging modalities. Reports are decomposed into anatomical structures, abnormal findings and pathological conditions to provide supervision for entity-conditioned retrieval and comparative visual question answering. Using this resource, we develop MedReCo, an entity-aware visual encoder for controllable retrieval of clinically analogous cases, and MedReCo-VLM, a vision--language extension for generative interpretation of interval change. Across internal, external and cross-center evaluations, MedReCo achieved the highest Recall@1 in all 12 internal retrieval settings and improved external retrieval by a mean of 6.0 percentage points. In clinically confusable differential groups, it consistently outperformed the strongest baselines. MedReCo-VLM achieved the best performance across all comparative generation evaluations and improved longitudinal follow-up accuracy by 14.5-46.5 percentage points on chest radiographs and 13.0-27.9 percentage points on CT. These findings suggest that entity-aware comparative reasoning can be learned from routine clinical data at scale and may provide a more clinically aligned foundation for medical imaging AI.",
+      "venue": "",
+      "year": 2026,
+      "date": "2026-06-04",
+      "link": "https://arxiv.org/abs/2606.06407",
+      "code": "",
+      "notes": "",
+      "authors": "Tengfei Zhang, Ziheng Zhao, Lisong Dai, Xiaoman Zhang, Pengcheng Qiu et al.",
+      "tags": {
+        "topic": "MLLM Reasoning & Planning",
+        "category": "Method",
+        "modality": "Multimodal"
+      }
+    },
+    {
+      "id": "gmbformer-an-ndvi-guided-global-memory-bank-transformer-for-urban-green-space-ex",
+      "arxiv_id": "2606.06363",
+      "title": "GMBFormer: An NDVI-Guided Global Memory Bank Transformer for Urban Green-Space Extraction from Ultra-High-Resolution Imagery",
+      "abstract": "Urban green-space extraction from ultra-high-resolution (UHR) imagery is commonly performed patch by patch, which limits semantic reuse among spatially separated but visually similar vegetation patterns. Directly injecting the Normalized Difference Vegetation Index (NDVI) into red-green-blue (RGB) backbones can also blur the roles of visual appearance learning and physical vegetation confidence. We propose GMBFormer, a SegFormer-based framework that replaces adjacency-driven feature propagation with selective, similarity-driven prototype retrieval. Only RGB channels enter the backbone and decoder, while NDVI is decoupled as a physics-informed gate that admits high-confidence vegetation descriptors into a compact global memory bank through momentum updates. During training and inference, the current patch queries stored prototypes through memory-mediated cross-attention, and the retrieved response is integrated with bounded overhead. Experiments use a self-constructed Chengdu UHR dataset with 7,700 labeled 512 x 512 patches and two reduced-label settings derived from the public International Society for Photogrammetry and Remote Sensing (ISPRS) Potsdam dataset. Under the same training and evaluation protocol, GMBFormer obtains mean intersection over union (mIoU)/mean Dice (mDice) scores of 89.25%/94.31%, 92.17%/95.92%, and 83.72%/90.86%, respectively, improving the controlled SegFormer-B4 baseline in each setting. Ablation studies indicate that decoupled NDVI admission, memory retrieval, capacity, and momentum jointly shape the final performance.",
+      "venue": "",
+      "year": 2026,
+      "date": "2026-06-04",
+      "link": "https://arxiv.org/abs/2606.06363",
+      "code": "",
+      "notes": "",
+      "authors": "Hao Lei, Xi Cheng, Chenlu Shu, Zhiheng Chen, Zhengjie Duan et al.",
+      "tags": {
+        "topic": "AI for Science",
+        "category": "Method",
+        "modality": "Image"
+      }
+    },
+    {
+      "id": "physics-in-2-steps-locking-motion-priors-before-visual-refinement-erases-them",
+      "arxiv_id": "2606.06361",
+      "title": "Physics in 2-Steps: Locking Motion Priors Before Visual Refinement Erases Them",
+      "abstract": "Image-to-Video diffusion models leverage input images to generate visually stunning content, yet frequently produce motion that violates physical laws. We reveal a surprising finding: a 2-step generation often exhibits better physical consistency than a 50-step output from the same model. Through spectral analysis, we trace this to phase erosion during denoising; the phase degrades significantly (dropping by $\\approx 18\\%$ from step 2 to step 50), whereas the magnitude remains relatively stable. Building on this insight, we propose PhaseLock, a training-free framework that preserves the valid motion priors from few-step inference throughout the denoising trajectory. Rather than relying on full-step inference for physical consistency, PhaseLock extracts a motion prior from just 2 steps and enforces it onto high-fidelity generation via Latent Delta Guidance. Our approach effectively mitigates phase degradation, improving physical consistency by an average of 6.2 points across diverse models while largely maintaining visual fidelity, with negligible overhead ($1.06\\times$ time, $1.02\\times$ memory) and reduced reliance on expensive external guidance methods ($\\sim5\\times$ time).",
+      "venue": "",
+      "year": 2026,
+      "date": "2026-06-04",
+      "link": "https://arxiv.org/abs/2606.06361",
+      "code": "",
+      "notes": "",
+      "authors": "Woojung Han, Seil Kang, Youngjun Jun, Min-Hung Chen, Fu-En Yang et al.",
+      "tags": {
+        "topic": "MLLM Reasoning & Planning",
+        "category": "Method",
+        "modality": "Multimodal"
+      }
+    },
+    {
+      "id": "comparison-of-deep-learning-frameworks-for-rice-disease-mapping-from-uav-multisp",
+      "arxiv_id": "2606.06359",
+      "title": "Comparison of Deep Learning Frameworks For Rice Disease Mapping From UAV Multispectral Imaging",
+      "abstract": "In this study, UAV multispectral imagery is used to segment the severity of bacterial leaf blight (BLB) in rice using convolutional neural networks (CNNs) and transformer-based models. The evaluated architectures include U-Net with a ResNet- 101 encoder, U-Net++ with EfficientNet-B3 and EfficientNetB7, DeepLabV3+, and SegFormer, all trained under a common pipeline with three input configurations (multispectral only, multispectral+NDVI, and multispectral+NDRE). Experiments are conducted using the publicly available BLB dataset with performance reported using mean IoU (mIoU), mean F1 (mF1), mean accuracy (mAcc), precision, and recall. U-Net++ with EfficientNet-B3 achieved the highest performance, with an mIoU of 97.62%. SegFormer obtained lower segmentation accuracy but comparable inference speed. Overall, the results indicate that lightweight CNN backbones remain more reliable for operational BLB monitoring while integration of vegetation indices provides small and consistent improvements. The study also highlights the value of standardised UAV datasets to compare disease mapping methods and encourages the use of CNN architectures for field implementation.",
+      "venue": "IGARSS 2026",
+      "year": 2026,
+      "date": "2026-06-04",
+      "link": "https://arxiv.org/abs/2606.06359",
+      "code": "",
+      "notes": "",
+      "authors": "Yadav Raj Ghimire, Jagrati Talreja, Tewodros Syum Gebre, Timothy Agboada, Shikha V. Chandel et al.",
+      "tags": {
+        "topic": "AI for Science",
+        "category": "Method",
+        "modality": "Image"
+      }
+    },
+    {
+      "id": "llm-conditioned-synthesis-of-pathological-gaits-via-structured-gait-language-rep",
+      "arxiv_id": "2606.06048",
+      "title": "LLM-Conditioned Synthesis of Pathological Gaits via Structured Gait-Language Representations",
+      "abstract": "Pathological gait datasets remain scarce due to privacy, recruitment, cost, and movement variability. Our work presents a multimodal LLM-guided framework for pathology-aware 3D gait data synthesis from structured textual descriptions. The proposed method generates fixed-length synthetic skeleton-based gait sequences for pathological gait classification tasks. The framework combines motion tokenisation, pathology-aware language conditioning, LLM-based semantic augmentation, and language-to-gait generation. A key contribution is the proposed pathological tokeniser, which is designed to preserve pathology-specific motion characteristics during discrete representation learning. Experiments suggest that the proposed synthetic sequences improve downstream classification for recurrent classifiers when combined with real data. The best result is obtained using a GRU classifier trained with real and synthetic samples, achieving 92.77\\% accuracy under a leave-one-subject-out protocol.",
+      "venue": "CVPR MOMA Workshop 2026",
+      "year": 2026,
+      "date": "2026-06-04",
+      "link": "https://arxiv.org/abs/2606.06048",
+      "code": "",
+      "notes": "",
+      "authors": "Mritula Chandrasekaran, Sanket Kachole, Jarik Francik, Dimitrios Makris",
+      "tags": {
+        "topic": "AI for Science",
+        "category": "Method",
+        "modality": "Multimodal"
+      }
+    },
+    {
+      "id": "texture-preserving-implicit-neural-representation-for-cone-beam-ct-truncated-rec",
+      "arxiv_id": "2606.06039",
+      "title": "Texture-preserving implicit neural representation for Cone beam CT truncated reconstruction",
+      "abstract": "Cone-beam computed tomography (CBCT) frequently suffers from data truncation, which introduces severe artifacts and limits the effective field of view (FOV). Existing deep learning methods for truncated cone-beam computed tomography (CBCT) reconstruction suffer from serious limitations, including a strict reliance on supervised ground truth and a failure to account for continuous 3D spatial truncation variations. To address these challenges, we introduce a self-supervised 3D reconstruction framework based on neural scene representations. By directly mapping spatial coordinates to radiodensity under projection supervision, our approach inherently bypasses traditional filtering and backprojection operations, thereby fundamentally eliminating truncation-induced ring artifacts while enabling robust continuous 3D data extrapolation. However, coordinate networks are susceptible to an inherent spectral bias, which leads to a severe loss of clinically vital high-frequency textures. To resolve this bottleneck, we further incorporate a physics-based iterative refinement module into the neural scene representation architecture. Leveraging the artifact-free, extrapolated volume from the coordinate network as an optimal initialization, this module progressively re-extracts and injects high-frequency structural information from the original projections back into the volume. Extensive experiments on both simulated and real-world datasets demonstrate that our method successfully unifies the exceptional artifact suppression and extrapolation capabilities of neural networks with the high-fidelity detail preservation of iterative algorithms.",
+      "venue": "",
+      "year": 2026,
+      "date": "2026-06-04",
+      "link": "https://arxiv.org/abs/2606.06039",
+      "code": "",
+      "notes": "",
+      "authors": "Genyuan Zhang, Junyao Wang, Haoran Lan, Chuandong Tan, Songtao Zhu et al.",
+      "tags": {
+        "topic": "AI for Science",
+        "category": "Method",
+        "modality": "Image"
+      }
+    },
+    {
+      "id": "cosine-misleads-auxiliary-losses-reshape-vision-language-models-not-their-latent",
+      "arxiv_id": "2606.05753",
+      "title": "Cosine Misleads: Auxiliary Losses Reshape Vision Language Models, Not Their Latents",
+      "abstract": "Latent visual reasoning (LVR) inserts supervised latent tokens between perception and answer generation in vision-language models (VLMs). The field uses alignment between these latents and their visual targets, i.e., cosine similarity or mean squared error (MSE), as both the training loss and the quality metric, assuming that better alignment yields a better answer. We test this with a designed matrix of five LVR variants and find the assumption inverted: cosine alignment is negatively correlated with accuracy across all five (r=-0.94). To explain this, we introduce PRISM, a pair of inference-time diagnostics: a linear probe that asks where the answer is decodable, and a corruption test that asks whether the latent is load-bearing. The supervised latents are largely bypassed. Corrupting them shifts accuracy by at most four points. The answer is decodable downstream of the latent but not at it, and the size of this decodability gap predicts how much each variant relies on its latent under perturbation. Consistent with an Information Bottleneck reading of the loss, the auxiliary objective reshapes the language model via shared parameters rather than via the latent variable it nominally optimizes.",
+      "venue": "",
+      "year": 2026,
+      "date": "2026-06-04",
+      "link": "https://arxiv.org/abs/2606.05753",
+      "code": "",
+      "notes": "",
+      "authors": "XiuYu Zhang, Junfeng Fang, Zhenkai Liang",
+      "tags": {
+        "topic": "MLLM Reasoning & Planning",
+        "category": "Method",
+        "modality": "Multimodal"
+      }
+    },
+    {
+      "id": "a-machine-learning-based-framework-for-discovering-huntington-s-disease-stages-i",
+      "arxiv_id": "2606.06196",
+      "title": "A Machine Learning-Based Framework for Discovering Huntington's Disease Stages: Integrating Graph Representation Learning and clustering to Uncover Progression Dynamics in Longitudinal Enroll-HD Dataset",
+      "abstract": "Huntington's disease (HD) is a progressive brain disorder that gradually affects movement, cognitive function, and behavior. Identifying the stage of the disease accurately and consistently is important for understanding its course, grouping patients, personalized care, and discovering treatment. Existing clinical staging frameworks rely primarily on predefined clinical measurement thresholds and clinical expert decisions, yet these discrete cut-offs may obscure meaningful intra-stage variability and remain vulnerable to inter-rater differences, especially in motor and functional assessments. To address these limitations, we developed an unsupervised machine learning framework based on dynamic graph representation learning to capture temporal relationships within and across patients from longitudinal clinical measurements. Using the learned representations, we applied K-means++ clustering to identify well-separated groups. We then iteratively increased the number of clusters (k), using stability analysis to assess robustness and reveal additional meaningful clusters beyond the initial optimal solution. We applied the framework to 302 individuals from the Enroll-HD cohort (1,477 visits, 44 clinical variables per visit; 80% manifest participants), enabling data-driven discovery of HD stages reflecting natural clinical progression. Despite the limited cohort size, the proposed framework achieved robust clustering performance using a four-dimensional latent space, identifying four meaningful and statistically distinct disease stages through clustering stability analysis. Each stage corresponded to well-defined clinical measurement boundaries, with minimal overlap compared to previously established clinical staging methods.",
+      "venue": "",
+      "year": 2026,
+      "date": "2026-06-04",
+      "link": "https://arxiv.org/abs/2606.06196",
+      "code": "",
+      "notes": "",
+      "authors": "Lubna M. Abu Zohair, Marta Vallejo, MD Azher Uddin, John R. Woodward, Hind Zantout",
+      "tags": {
+        "topic": "AI for Science",
+        "category": "Method"
+      }
+    },
+    {
+      "id": "learning-to-model-pediatric-asthma-exacerbation-from-multiple-risk-factors-a-cas",
+      "arxiv_id": "2606.06174",
+      "title": "Learning to model pediatric asthma exacerbation from multiple risk factors: a case study in coastal Virginia",
+      "abstract": "Childhood asthma is a common illness exacerbated by air pollution as well as meteorological and neighborhood-level socioeconomic factors. Modeling asthma exacerbation (AE) in large spatiotemporal datasets requires disentangling impacts from multiple contributors. In this case study, we compared three techniques that balance predictive power with interpretability to predict AE in Hampton Roads, a coastal Virginia region comprising 7 cities and over 1.5 million people. After collating ambient air pollution measurements, weather data, and measures of neighborhood opportunity, we modeled zip code-level acute AE visits to a regional children's hospital and affiliated providers from 2018-2023. Generalized linear models (GLM) provided a baseline while neural networks (NN) served as a maximally predictive target. To bridge between statistical models and deep learning, we developed a framework based on sparse dictionary learning to identify and interpret parsimonious nonlinear interacting equations. After comparing each model's predictive performance, we estimated relative risks for AE due to input exposure variables and found consensus across frameworks. Our work links statistical and interpretable machine learning models to highlight possible synergistic interactions influencing AE, and may enable future studies to guide public health interventions in coastal Virginia.",
+      "venue": "",
+      "year": 2026,
+      "date": "2026-06-04",
+      "link": "https://arxiv.org/abs/2606.06174",
+      "code": "",
+      "notes": "",
+      "authors": "Jonathan Colen, Eric Werner, Maryam Golbazi, Heather Richter, Diana McSpadden et al.",
+      "tags": {
+        "topic": "AI for Science",
+        "category": "Method"
+      }
+    },
+    {
+      "id": "trust-aware-predictive-emissions-monitoring-for-gas-turbine-fleets-with-limited-",
+      "arxiv_id": "2606.06156",
+      "title": "Trust-Aware Predictive Emissions Monitoring for Gas Turbine Fleets with Limited Labelled Data",
+      "abstract": "Machine learning-based predictive emissions monitoring systems offer a practical alternative to direct emissions measurement, but their deployment across gas turbine fleets is challenging when emissions labels are available for only a small subset of assets. In this work, a trust-aware probabilistic framework is proposed for fleet-level gas turbine NOx prediction under limited labelled supervision. The framework combines a multi-head recurrent prediction model with learned confidence estimation, ensemble-based uncertainty quantification, auxiliary feature prediction, feature-space distance analysis, and operating-range diagnostics. These signals are calibrated on labelled data to produce interpretable per-sample trust scores, providing indicators of prediction reliability on unlabelled turbines, supporting the identification of predictions that should be treated with greater caution during fleet-level deployment. Confidence-based filtering reduces MAE from 0.202 at full coverage to 0.070 for the highest-confidence 10\\% of predictions, demonstrating that confidence estimates are meaningfully related to prediction error. Unlabelled and out-of-distribution samples exhibit increased uncertainty and reduced confidence, indicating that the framework responds appropriately to distributional shift. The results show that the proposed trust framework provides actionable reliability information for emissions prediction on unlabelled turbines, supporting more transparent and trustworthy deployment of PEMS across industrial fleets.",
+      "venue": "",
+      "year": 2026,
+      "date": "2026-06-04",
+      "link": "https://arxiv.org/abs/2606.06156",
+      "code": "",
+      "notes": "",
+      "authors": "Rebecca Potts, Aiden Durrant, Rick Hackney, Georgios Leontidis",
+      "tags": {
+        "topic": "AI for Science",
+        "category": "Method"
+      }
+    },
+    {
+      "id": "3d-underwater-path-planning-via-generative-flow-field-surrogates",
+      "arxiv_id": "2606.06077",
+      "title": "3D Underwater Path Planning via Generative Flow Field Surrogates",
+      "abstract": "Autonomous underwater vehicle (AUV) launch and recovery (LAR) into the hull of an advancing host platform requires traversal of a complex, three-dimensional propeller wake whose hydrodynamic structure cannot be characterised by a uniform current model. High-fidelity Reynolds-Averaged Navier-Stokes (RANS) Computational Fluid Dynamics (CFD) simulations resolve this structure with sufficient accuracy for path planning, but their computational cost renders them impractical for onboard use. We address this gap by integrating two conditional generative adversarial network (cGAN) architectures -- a regularised PatchGAN and a 2D3DGAN with self-attention -- as drop-in replacements for RANS CFD data within a three-dimensional, energy-weighted A* path planning framework. Both generators are driven by a hierarchical pipeline that synthesises full $128^3$ voxel flow field volumes from scalar operating condition inputs alone, with end-to-end inference times of approximately 28-146 $μ$s, compared to hours for a single RANS computation. We benchmark all four environmental knowledge levels: uniform current, ground-truth CFD, PatchGAN, and 2D3DGAN~SA across 19,800 independently generated trajectories spanning 550 distinct flow conditions. Full CFD wake knowledge reduces energy expenditure by 5.7-12.5% and high-velocity wake-core encounters by up to 77.8% relative to uniform-current planning, with both benefits scaling with operating severity. The cGAN surrogates recover approximately 45-60% of the CFD energy benefit and high-velocity cell avoidance benefit while operating at inference speeds compatible with edge device use. These results provide the first systematic quantification of the downstream path planning value of cGAN-predicted hydrodynamic fields in a three-dimensional maritime robotics application.",
+      "venue": "",
+      "year": 2026,
+      "date": "2026-06-04",
+      "link": "https://arxiv.org/abs/2606.06077",
+      "code": "",
+      "notes": "",
+      "authors": "Zachary Cooper-Baldock, Paulo E. Santos, Russell S. A. Brinkworth, Karl Sammut",
+      "tags": {
+        "topic": "Agent in Physical World",
+        "category": "Method"
+      }
     }
   ]
 }
