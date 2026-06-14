@@ -125814,6 +125814,132 @@
         "category": "Method",
         "modality": "Text"
       }
+    },
+    {
+      "id": "minimax-sparse-attention",
+      "arxiv_id": "2606.13392",
+      "title": "MiniMax Sparse Attention",
+      "abstract": "Ultra-long-context capability is becoming indispensable for frontier LLMs: agentic workflows, repository-scale code reasoning, and persistent memory all require the model to jointly attend over hundreds of thousands to millions of tokens, yet the quadratic cost of softmax attention makes this untenable at deployment scale. We introduce MiniMax Sparse Attention (MSA), a blockwise sparse attention built upon Grouped Query Attention (GQA). A lightweight Index Branch scores key-value blocks and independently selects a Top-k subset for each GQA group, enabling group-specific sparse retrieval while maintaining efficient block-level execution; the Main Branch then performs exact block-sparse attention over only the selected blocks. Designed around a principle of simplicity and scalability, MSA is deliberately streamlined, making it straightforward to deploy efficiently across a broad range of GPUs. To translate sparsity into practical speedups, we co-design MSA with a GPU execution path that uses exp-free Top-k selection and KV-outer sparse attention to improve tensor-core utilization under block-granular access. On a 109B-parameter model with native multimodal training, MSA performs on par with GQA while reducing per-token attention compute by 28.4x at 1M context. Paired with our co-designed kernel, MSA achieves 14.2x prefill and 7.6x decoding wall-clock speedups on H800. Our inference kernel is available at: https://github.com/MiniMax-AI/MSA. A production-grade natively multimodal model powered by MSA has been publicly released at: https://huggingface.co/MiniMaxAI/MiniMax-M3.",
+      "venue": "",
+      "year": 2026,
+      "date": "2026-06-11",
+      "link": "https://arxiv.org/abs/2606.13392",
+      "code": "https://github.com/MiniMax-AI/MSA",
+      "notes": "",
+      "authors": "Xunhao Lai, Weiqi Xu, Yufeng Yang, Qiaorui Chen, Yang Xu et al.",
+      "tags": {
+        "topic": "LLM Reasoning & Planning",
+        "category": "Method",
+        "modality": "Text"
+      }
+    },
+    {
+      "id": "can-i-buy-your-kv-cache",
+      "arxiv_id": "2606.13361",
+      "title": "Can I Buy Your KV Cache?",
+      "abstract": "Right now, across the world, AI agents are repeating the same absurd act: to read one document, they each recompute it from scratch. Every agent re-runs prefill, the most compute-intensive step a large model takes, over identical text, only to rebuild a key-value (KV) cache identical to the one the agent before it just built. The same answer, computed a million times. We make a proposal that is almost offensively simple: compute it once. Let a publisher precompute a document's KV cache, and let every other agent buy the right to load it and skip prefill. It works, and it is token-exact: loading a precomputed KV and continuing matches prefilling from scratch (24/24 greedy tokens, and at the logits level), with no accuracy cost. On Qwen3-4B, reuse is 9-50x cheaper in compute than prefill, and the gap widens with length (prefill's attention scales with L^2), so a single reuse already pays it back. Then the part that matters: where the KV lives. Shipping it fails, because KV is nearly incompressible, so per-load egress costs more than the prefill it saves. Hosting it provider-side, exactly as production prompt-caching works, removes egress entirely. The size of the prize is set by our measured compute saving: serving one hot 3774-token document to 80M agents costs ~$1.5M to re-prefill but only ~$0.03M of reuse compute (49.7x less). The 0.1x cache-read tariff APIs charge passes a 10x discount to users while sitting inside this measured envelope, so the 10x is a floor that the measured ~50x compute saving clears, and the gap to the physical ~50x is provider margin: millions of dollars per popular document. We frame the resulting agent-native prefill CDN and leave lossless KV compression and a cross-party payment layer as the open problems.",
+      "venue": "",
+      "year": 2026,
+      "date": "2026-06-11",
+      "link": "https://arxiv.org/abs/2606.13361",
+      "code": "",
+      "notes": "",
+      "authors": "Luoyuan Zhang",
+      "tags": {
+        "topic": "LLM Reasoning & Planning",
+        "category": "Method",
+        "modality": "Text"
+      }
+    },
+    {
+      "id": "ivie-a-neuro-symbolic-approach-to-incremental-and-validated-generation-of-intera",
+      "arxiv_id": "2606.13348",
+      "title": "IVIE: A Neuro-symbolic Approach to Incremental and Validated Generation of Interactive Fiction Worlds",
+      "abstract": "Computational creativity in Interactive Fiction faces a fundamental tension: Large Language Models (LLM) may produce creative narratives but struggle with world coherence, while symbolic systems ensure consistency but lack creative flexibility. We present IVIE (Incremental & Validated Interactive Experiences), a neuro-symbolic approach to generating complete and playable interactive fiction worlds from scratch. Building upon PAYADOR's neuro-symbolic framework, IVIE implements a four-stage incremental generation pipeline that delegates creative decisions--setting and character creation, puzzle design--to LLMs while grounding the world state through symbolic validation. The system generates worlds with interconnected locations, functional items, non-player characters, and coherent puzzles, all structured around a central goal-oriented architecture. Human evaluation shows the approach generates immersive, thematically coherent worlds with high player engagement. Results seem to indicate that the neuro-symbolic approach successfully balances flexibility with narrative coherence: symbolic validation grounds LLM generation without eliminating generative freedom. However, challenges remain: LLM inconsistencies occasionally bypass puzzle constraints, and objective validation gaps allow some structurally impossible goals. We identify key design considerations for future neurosymbolic interactive storytelling systems, particularly regarding LLM capabilities and their limitations.",
+      "venue": "the Proceedings of the 16",
+      "year": 2026,
+      "date": "2026-06-11",
+      "link": "https://arxiv.org/abs/2606.13348",
+      "code": "",
+      "notes": "",
+      "authors": "Micaela Vaucher, Santiago Silveira, Santiago Góngora, Luis Chiruzzo",
+      "tags": {
+        "topic": "Agent in Digital World",
+        "category": "Method",
+        "modality": "Text"
+      }
+    },
+    {
+      "id": "dual-domain-equivariant-generative-adversarial-network-for-multimodal-ct-pet-syn",
+      "arxiv_id": "2606.13341",
+      "title": "Dual-Domain Equivariant Generative Adversarial Network for Multimodal CT-PET Synthesis",
+      "abstract": "We present a Dual-Domain Equivariant Generative Adversarial Network (DDE-GAN) for multimodal CT-PET image synthesis. Traditional GAN-based approaches often operate solely in the spatial domain and ignore geometric consistency, resulting in limited structural fidelity. DDE-GAN addresses these challenges by jointly learning from both spatial and frequency (Fourier) domains, capturing complementary anatomical and spectral information. Furthermore, rotational equivariance embedded in the physics of the CT and PET measurements are integrated into the loss of both the generator and discriminator to ensure consistent responses under rotations, improving anatomical accuracy. A hierarchical dual-domain training strategy enforces intra- and inter-domain consistency through multi-stage loss functions. Evaluated on the HECKTOR 2022 CT-PET dataset, DDE-GAN achieves superior synthesis quality over baseline models for CT-PET image synthesis. The results demonstrate that combining dual-domain learning with geometric equivariance substantially enhances multimodal image synthesis accuracy and robustness, enabling practical applications in PET completion and data augmentation.",
+      "venue": "",
+      "year": 2026,
+      "date": "2026-06-11",
+      "link": "https://arxiv.org/abs/2606.13341",
+      "code": "",
+      "notes": "",
+      "authors": "Gabriel Steele, Alzahra Altalib, Alessandro Perelli",
+      "tags": {
+        "topic": "AI for Science",
+        "category": "Method",
+        "modality": "Image"
+      }
+    },
+    {
+      "id": "policyguard-towards-test-time-and-step-level-adversary-defense-for-reinforcement",
+      "arxiv_id": "2606.12896",
+      "title": "PolicyGuard: Towards Test-time and Step-level Adversary Defense for Reinforcement Learning Agent",
+      "abstract": "While real-world applications of reinforcement learning (RL) are becoming increasingly popular, the security of RL systems deserve more attention and exploration. In particular, recent work has revealed that RL agents are vulnerable to backdoor attacks, where a victim agent behaves normally under standard conditions but executes malicious actions when a specific trigger is activated. Existing backdoor defenses for RL either require access to the agent's internal parameters, operate only at the model or trajectory level, or are limited to specific attack types. To ensure the security of RL agents, we propose \\texttt{PolicyGuard}, a \\textit{test-time step-level} backdoor defense which leverages Gaussian Process (GP) posterior variance and adapts pseudo trajectories to enable uncertainty computation for individual time step. Besides, we also provide theoretical foundations to explain the efficacy of GP posterior variance. Extensive experiments across seven RL games demonstrate that PolicyGuard achieves state-of-the-art detection performance in most cases, with average AUROC of 0.856 for perturbation-based attacks and 0.859 for adversary-agent attacks.",
+      "venue": "",
+      "year": 2026,
+      "date": "2026-06-11",
+      "link": "https://arxiv.org/abs/2606.12896",
+      "code": "",
+      "notes": "",
+      "authors": "Junfeng Guo Heng Huang",
+      "tags": {
+        "topic": "Agent in Digital World",
+        "category": "Method",
+        "modality": "Text"
+      }
+    },
+    {
+      "id": "foundations-of-practical-quantum-advantage-in-quantum-informed-machine-learning-",
+      "arxiv_id": "2606.13422",
+      "title": "Foundations of Practical Quantum Advantage in Quantum-Informed Machine Learning for Predicting Chaos",
+      "abstract": "We develop theoretical foundations for a practical quantum-advantage mechanism in quantum-informed machine learning for chaotic dynamical systems. A family of k-indexed higher-order quantum statistical priors (Q-Priors) hosts the k-point marginal of the invariant measure on n_q = kq qubits, extending the single-site construction of prior work. We prove a two-stage advantage. In the representation stage, superposition and entanglement compactly store non-factorisable spatial correlations of the invariant measure on n_q qubits. In the extraction stage, joint Bell measurements on two copies estimate any post hoc Pauli functional with a copy-pair count independent of n_q, whereas any adaptive single-copy protocol for the corresponding full-Pauli read-out requires Omega(2^(n_q)) copies; this is a provable quantum-classical separation in copy-measurement complexity. The two-copy read-out is realised in simulation and on IQM superconducting processors. Two case studies instantiate the mechanism in workflows of independent scientific value: a turbulent channel-flow study in which the two-copy read-out yields a named non-diagonal correlator of the invariant measure (the velocity-direction coherence), and a medium-range weather forecasting workflow on the European Centre for Medium-Range Weather Forecasts ERA5 reanalysis in which the diagonal k <= 2 Q-Prior steers a Koopman rollout, improves anomaly-correlation skill by 10-39% across 48-240 h lead times, and reduces the long-horizon collapse of rollouts onto a static mean field. The two conditions of our practical-advantage definition are met at complementary levels, identifying a candidate route to practical quantum advantage before fault-tolerant hardware.",
+      "venue": "",
+      "year": 2026,
+      "date": "2026-06-11",
+      "link": "https://arxiv.org/abs/2606.13422",
+      "code": "",
+      "notes": "",
+      "authors": "Maida Wang, Xiao Xue, Minh Chung, Peter V. Coveney",
+      "tags": {
+        "topic": "AI for Science",
+        "category": "Method",
+        "modality": "Text"
+      }
+    },
+    {
+      "id": "redesigning-regularization-for-effective-policy-smoothing",
+      "arxiv_id": "2606.13169",
+      "title": "Redesigning Regularization for Effective Policy Smoothing",
+      "abstract": "This paper proposes a novel regularization design to effectively smooth policy functions in reinforcement learning. While regularization that enhances ``global'' Lipschitz continuity was initially considered, it has been limited to ``local'' Lipschitz continuity due to a tradeoff between smoothness and expressiveness. However, it has become apparent that the original implementation is cumbersome and does not provide sufficient smoothing, leading to a preference for simpler implementations. This stems from a discrepancy between theory and implementation, and a more appropriate implementation can expect to facilitate smoothing. Therefore, this paper identifies three reasons why the original implementation does not function adequately and provide remedies for them. This modified regularization performs well across multiple tasks and algorithms, successfully achieving smooth motion while improving control performance. Furthermore, by applying it to sim-to-real reinforcement learning for a quadruped robot, it is demonstrated that smooth motion provides robustness against sudden changes in target velocity commands.",
+      "venue": "",
+      "year": 2026,
+      "date": "2026-06-11",
+      "link": "https://arxiv.org/abs/2606.13169",
+      "code": "",
+      "notes": "",
+      "authors": "Taisuke Kobayashi, Naoto Yamanaka",
+      "tags": {
+        "topic": "Agent in Physical World",
+        "category": "Method",
+        "modality": "Text"
+      }
     }
   ]
 }
