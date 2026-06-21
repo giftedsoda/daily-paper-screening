@@ -145124,6 +145124,96 @@
         "category": "Method",
         "modality": ""
       }
+    },
+    {
+      "id": "interpretable-sperm-morphology-classification-via-attention-guided-deep-learning",
+      "arxiv_id": "2606.20438",
+      "title": "Interpretable Sperm Morphology Classification via Attention-Guided Deep Learning",
+      "abstract": "Male infertility is a major cause of couple infertility, often linked to abnormal sperm morphology. While deep learning models offer automated analysis, most lack interpretability, limiting their clinical adoption. This study proposes an attention-guided deep learning framework for sperm morphology classification. We combine a pretrained EfficientNet-B0 with a Convolutional Block Attention Module (CBAM) to focus on key areas of the sperm head, improving both accuracy and interpretability. Evaluated on the SMIDS and HuSHem public datasets, our model achieves accuracies of 90.2% and 93.9% (macro F1 scores of 0.913 and 0.948), outperforming SimpleCNN and standard EfficientNet-B0. Furthermore, we use Grad-CAM++ visualizations to highlight features influencing the model's decisions. The results demonstrate that this accurate and transparent framework is a practical tool for automated sperm analysis in fertility clinics.",
+      "venue": "",
+      "year": 2026,
+      "date": "2026-06-18",
+      "link": "https://arxiv.org/abs/2606.20438",
+      "code": "",
+      "notes": "",
+      "authors": "Zahra Asghari Varzaneh, Reza Khoshkangini, Thomas Ebner, Lars Johansson",
+      "tags": {
+        "topic": "AI for Science",
+        "category": "Method",
+        "modality": "Image"
+      }
+    },
+    {
+      "id": "spectral-query-key-product-weight-steering-for-training-free-vlm-hallucination-m",
+      "arxiv_id": "2606.20419",
+      "title": "Spectral Query-Key Product Weight Steering for Training-Free VLM Hallucination Mitigation",
+      "abstract": "Vision-language models (VLMs) often generate fluent but visually unsupported descriptions, especially by mentioning objects absent from the image. We propose QK Product Steering, a data-free, training-free, and zero-inference-cost weight edit for reducing object hallucination. The method directly edits the per-head query-key product, the operator that produces pre-softmax attention logits, by suppressing a small number of dominant singular modes in selected middle layers. The edited product is then mapped back to the query weights through a closed-form query-only update while keeping shared key weights fixed, making the edit compatible with grouped-query attention. We further decompose the QK product into symmetric and antisymmetric components to distinguish mutual content-similarity patterns from directional attention patterns. Across three GQA-based VLMs, QK Product Steering achieves an average relative CHAIR$_s$ reduction of $4.0\\%$, while matched random-mode controls show negligible change. Interpretability ablations show that the hallucination signal is specific to dominant QK modes and is primarily localized to the symmetric mutual-attention channel. Overall, QK Product Steering offers a simple alternative to decoding-time mitigation, requiring no additional data, fine-tuning, or inference-time overhead while largely preserving general multimodal capability.",
+      "venue": "",
+      "year": 2026,
+      "date": "2026-06-18",
+      "link": "https://arxiv.org/abs/2606.20419",
+      "code": "",
+      "notes": "",
+      "authors": "Karn Tiwari, Varnith Chordia, Prathosh A P",
+      "tags": {
+        "topic": "MLLM Reasoning & Planning",
+        "category": "Method",
+        "modality": "Multimodal"
+      }
+    },
+    {
+      "id": "pixel-level-residual-diffusion-transformer-scalable-3d-ct-volume-generation",
+      "arxiv_id": "2606.20112",
+      "title": "Pixel-Level Residual Diffusion Transformer: Scalable 3D CT Volume Generation",
+      "abstract": "Generating high-resolution 3D CT volumes with fine details remains challenging due to substantial computational demands and optimization difficulties inherent to existing generative models. In this paper, we propose the Pixel-Level Residual Diffusion Transformer (PRDiT), a scalable generative framework that synthesizes high-quality 3D medical volumes directly at voxel-level. PRDiT introduces a two-stage training architecture comprising 1) a local denoiser in the form of an MLP-based blind estimator operating on overlapping 3D patches to separate low-frequency structures efficiently, and 2) a global residual diffusion transformer employing memory-efficient attention to model and refine high-frequency residuals across entire volumes. This coarse-to-fine modeling strategy simplifies optimization, enhances training stability, and effectively preserves subtle structures without the limitations of an autoencoder bottleneck. Extensive experiments conducted on the LIDC-IDRI and RAD-ChestCT datasets demonstrate that PRDiT consistently outperforms state-of-the-art models, such as HA-GAN, 3D LDM and WDM-3D, achieving significantly lower 3D FID, MMD and Wasserstein distance scores.",
+      "venue": "ICLR 2026",
+      "year": 2026,
+      "date": "2026-06-18",
+      "link": "https://arxiv.org/abs/2606.20112",
+      "code": "https://github.com/Fredy-Zhang/PRDiT",
+      "notes": "",
+      "authors": "Zhenkai Zhang, Markus Hiller, Krista A. Ehinger, Tom Drummond",
+      "tags": {
+        "topic": "AI for Science",
+        "category": "Method",
+        "modality": "Image"
+      }
+    },
+    {
+      "id": "mmd-slam-structure-enhanced-multi-meta-gaussian-distribution-guided-visual-slam",
+      "arxiv_id": "2606.19874",
+      "title": "MMD-SLAM: Structure-Enhanced Multi-Meta Gaussian Distribution-Guided Visual SLAM",
+      "abstract": "3D Gaussian Splatting (3DGS) has significantly boosted novel view synthesis and high-fidelity scene reconstruction, expanding the potential of 3DGS-based Visual Simultaneous Localization and Mapping (SLAM) methods. However, most existing systems fail to fully exploit the underlying structural information, which limits rendering quality and often leads to inconsistent maps. To address these limitations, we propose MMD-SLAM, a structure-enhanced Visual SLAM framework that leverages the Atlanta World (AW) assumption to guide a Multi-Meta Gaussian representation for photorealistic mapping. First, we introduce a point-line fusion strategy for pose optimization, where 3D line segments are incorporated to improve tracking robustness and provide additional constraints for mapping. Second, we design a Multi-Meta Gaussian representation with dominant directions, explicitly encoding structural priors from the AW hypothesis. Finally, we propose a Gaussian evolution strategy that adapts to scene geometry and incorporates structural cues into global optimization. Extensive experiments demonstrate that these innovations enable MMD-SLAM to achieve state-of-the-art performance in both tracking accuracy and mapping quality. e.g., our method achieves a 48.56% reduction in ATE RMSE on ScanNet and a 5.71% improvement in PSNR on Replica, compared with MonoGS.",
+      "venue": "",
+      "year": 2026,
+      "date": "2026-06-18",
+      "link": "https://arxiv.org/abs/2606.19874",
+      "code": "",
+      "notes": "",
+      "authors": "Fan Zhu, Ziyu Chen, Peichen Liu, Yifan Zhao, Zhisong Xu et al.",
+      "tags": {
+        "topic": "Agent in Physical World",
+        "category": "Method",
+        "modality": "Image"
+      }
+    },
+    {
+      "id": "coli-a-reproducible-platform-for-continuum-robot-learning-via-monolithic-3d-prin",
+      "arxiv_id": "2606.20389",
+      "title": "CoLI: A Reproducible Platform for Continuum Robot Learning via Monolithic 3D Printing and Isomorphic Teleoperation",
+      "abstract": "Continuum robots offer strong potential for manipulation tasks due to their high degrees of freedom, compliant structures, and operational safety. However, their adoption in both research and practical applications has been hindered by reproducibility issues arising from complex fabrication and assembly processes, challenging kinematic modeling, and a lack of intuitive control interfaces. To address these challenges, we present a novel open-source continuum robot design. The platform features a simplified fabrication pipeline enabled by multi-material 3D printing, allowing the arm to be fabricated as a monolithic compliant structure with minimal assembly. Control is achieved through an isomorphic teleoperation interface that establishes a direct actuator-level mapping, eliminating the need for explicit kinematic modeling and providing a singularity-free mapping. Building on this hardware design, the platform further supports imitation-learning-based autonomous control. The proposed system is evaluated through hardware characterization and a set of manipulation tasks. Experimental results demonstrate that the platform provides a reproducible, learning-ready continuum robot system, accelerating algorithmic development and systematic benchmarking for the continuum robotics community.",
+      "venue": "IROS2026",
+      "year": 2026,
+      "date": "2026-06-18",
+      "link": "https://arxiv.org/abs/2606.20389",
+      "code": "",
+      "notes": "",
+      "authors": "Ziyuan Tang, Chenxi Xiao*",
+      "tags": {
+        "topic": "Agent in Physical World",
+        "category": "Method",
+        "modality": "Multimodal"
+      }
     }
   ]
 }
